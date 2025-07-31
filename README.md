@@ -2,7 +2,7 @@ Software Requirement Specification (SRS)
 of   
 E-Gram Panchayat                                        
 ***************************************************************************  
-Company’s Name:-  Kamadgiri Software Solutions Pvt Ltd Chitrakoot  
+College Name:United college of Enginering & Research  
 Project Manager’s Name:- Er. Adarsh Dubey
 Team Leader Name:- Er. Atul Pandey  
 Project Co-ordinatior’s Name:-   Er.Vibhu Dubey 
