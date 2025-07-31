@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "EnquiryManagement";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model IEnumerable<Enquiry_Master>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-bordered table table-striped">
+                <thead>
+                    <tr class="table-primary" align="center">
+                        <th scope="col">Enquiry ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">EmailID</th>
+                        <th scope="col">Mobile No</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Enquiry Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Enquiry_Master e in Model)
+                        {
+                                        <tr>
+
+                                            <td>@e.EnquiryId</td>
+                                            <td>@e.Name</td>
+                                            <td>@e.EmailId</td>
+                                            <td>@e.MobNo</td>
+                                            <td>@e.Topic</td>
+                                            <td>@e.Enquiry_Msg</td>
+                                            <td>@e.Enquiry_dt</td>
+                                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

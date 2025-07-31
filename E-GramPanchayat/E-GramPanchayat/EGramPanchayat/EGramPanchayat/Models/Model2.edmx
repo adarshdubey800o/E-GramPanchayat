@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Panchyat_DBModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apply_Master">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="200" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="20" />
+          <Property Name="Services" Type="varchar" MaxLength="100" />
+          <Property Name="Apply_DT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BeneficiaryMaster">
+          <Key>
+            <PropertyRef Name="EmailId" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="70" />
+          <Property Name="Gender" Type="varchar" MaxLength="12" />
+          <Property Name="FatherName" Type="varchar" MaxLength="70" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="20" />
+          <Property Name="EmailId" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="AdharNo" Type="varchar" MaxLength="20" />
+          <Property Name="RelatedStateId" Type="int" />
+          <Property Name="RelatedCityId" Type="int" />
+          <Property Name="RelatedBlockId" Type="int" />
+          <Property Name="VillageName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="200" />
+          <Property Name="PinCode" Type="int" />
+          <Property Name="BeneficiaryPicName" Type="varchar" MaxLength="200" />
+          <Property Name="AdharPicName" Type="varchar" MaxLength="200" />
+          <Property Name="RegDT" Type="datetime" />
+          <Property Name="IsDel" Type="bit" />
+        </EntityType>
+        <EntityType Name="Block_Master">
+          <Key>
+            <PropertyRef Name="BlockId" />
+          </Key>
+          <Property Name="BlockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BlockName" Type="varchar" MaxLength="100" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City_Master">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CityName" Type="varchar" MaxLength="100" />
+          <Property Name="StateId" Type="int" />
+        </EntityType>
+        <EntityType Name="Enquiry_Master">
+          <Key>
+            <PropertyRef Name="EnquiryId" />
+          </Key>
+          <Property Name="EnquiryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="70" />
+          <Property Name="EmailId" Type="varchar" MaxLength="200" />
+          <Property Name="MobNo" Type="bigint" />
+          <Property Name="Topic" Type="varchar" MaxLength="100" />
+          <Property Name="Enquiry_Msg" Type="varchar(max)" />
+          <Property Name="Enquiry_dt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Feedback_Master">
+          <Key>
+            <PropertyRef Name="FeedbackId" />
+          </Key>
+          <Property Name="FeedbackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FeedbackTitle" Type="varchar" MaxLength="100" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="UserId" Type="varchar" MaxLength="100" />
+          <Property Name="Feedback_DT" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Login_Master">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="UserType" Type="varchar" MaxLength="200" />
+          <Property Name="Pass" Type="varchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="LCount" Type="int" />
+          <Property Name="LastLogin_dt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Notification_Master">
+          <Key>
+            <PropertyRef Name="Nid" />
+          </Key>
+          <Property Name="Nid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NMsg" Type="varchar(max)" />
+          <Property Name="NDT" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Service_Master">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Services" Type="varchar" MaxLength="100" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="300" />
+          <Property Name="Service_DT" Type="varchar" MaxLength="30" />
+          <Property Name="IsDel" Type="bit" />
+        </EntityType>
+        <EntityType Name="State_Master">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_BeneficiaryMaster_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="0..1" />
+          <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="BeneficiaryMaster">
+              <PropertyRef Name="RelatedCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BeneficiaryMaster_State_Master">
+          <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+          <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Master">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="BeneficiaryMaster">
+              <PropertyRef Name="RelatedStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Block_Master_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+          <End Role="Block_Master" Type="Self.Block_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Block_Master">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Master_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+          <End Role="City_Master1" Type="Self.City_Master" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="City_Master1">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Master_State_Master">
+          <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Master">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="City_Master">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Panchyat_DBModel1StoreContainer">
+          <EntitySet Name="Apply_Master" EntityType="Self.Apply_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BeneficiaryMaster" EntityType="Self.BeneficiaryMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Block_Master" EntityType="Self.Block_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City_Master" EntityType="Self.City_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enquiry_Master" EntityType="Self.Enquiry_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedback_Master" EntityType="Self.Feedback_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Master" EntityType="Self.Login_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification_Master" EntityType="Self.Notification_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_Master" EntityType="Self.Service_Master" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State_Master" EntityType="Self.State_Master" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BeneficiaryMaster_City_Master" Association="Self.FK_BeneficiaryMaster_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BeneficiaryMaster_State_Master" Association="Self.FK_BeneficiaryMaster_State_Master">
+            <End Role="State_Master" EntitySet="State_Master" />
+            <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMaster" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Block_Master_City_Master" Association="Self.FK_Block_Master_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="Block_Master" EntitySet="Block_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Master_City_Master" Association="Self.FK_City_Master_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="City_Master1" EntitySet="City_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Master_State_Master" Association="Self.FK_City_Master_State_Master">
+            <End Role="State_Master" EntitySet="State_Master" />
+            <End Role="City_Master" EntitySet="City_Master" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Panchyat_DBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Apply_Master">
+          <Key>
+            <PropertyRef Name="AId" />
+          </Key>
+          <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apply_DT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BeneficiaryMaster">
+          <Key>
+            <PropertyRef Name="EmailId" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="FatherName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AdharNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RelatedStateId" Type="Int32" />
+          <Property Name="RelatedCityId" Type="Int32" />
+          <Property Name="RelatedBlockId" Type="Int32" />
+          <Property Name="VillageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PinCode" Type="Int32" />
+          <Property Name="BeneficiaryPicName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="AdharPicName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RegDT" Type="DateTime" Precision="3" />
+          <Property Name="IsDel" Type="Boolean" />
+          <NavigationProperty Name="City_Master" Relationship="Self.FK_BeneficiaryMaster_City_Master" FromRole="BeneficiaryMaster" ToRole="City_Master" />
+          <NavigationProperty Name="State_Master" Relationship="Self.FK_BeneficiaryMaster_State_Master" FromRole="BeneficiaryMaster" ToRole="State_Master" />
+        </EntityType>
+        <EntityType Name="Block_Master">
+          <Key>
+            <PropertyRef Name="BlockId" />
+          </Key>
+          <Property Name="BlockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BlockName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="City_Master" Relationship="Self.FK_Block_Master_City_Master" FromRole="Block_Master" ToRole="City_Master" />
+        </EntityType>
+        <EntityType Name="City_Master">
+          <Key>
+            <PropertyRef Name="CityId" />
+          </Key>
+          <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateId" Type="Int32" />
+          <NavigationProperty Name="BeneficiaryMasters" Relationship="Self.FK_BeneficiaryMaster_City_Master" FromRole="City_Master" ToRole="BeneficiaryMaster" />
+          <NavigationProperty Name="Block_Master" Relationship="Self.FK_Block_Master_City_Master" FromRole="City_Master" ToRole="Block_Master" />
+          <NavigationProperty Name="City_Master1" Relationship="Self.FK_City_Master_City_Master" FromRole="City_Master" ToRole="City_Master1" />
+          <NavigationProperty Name="City_Master2" Relationship="Self.FK_City_Master_City_Master" FromRole="City_Master1" ToRole="City_Master" />
+          <NavigationProperty Name="State_Master" Relationship="Self.FK_City_Master_State_Master" FromRole="City_Master" ToRole="State_Master" />
+        </EntityType>
+        <EntityType Name="Enquiry_Master">
+          <Key>
+            <PropertyRef Name="EnquiryId" />
+          </Key>
+          <Property Name="EnquiryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="MobNo" Type="Int64" />
+          <Property Name="Topic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Enquiry_Msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Enquiry_dt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Feedback_Master">
+          <Key>
+            <PropertyRef Name="FeedbackId" />
+          </Key>
+          <Property Name="FeedbackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FeedbackTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Feedback_DT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Login_Master">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Pass" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="LCount" Type="Int32" />
+          <Property Name="LastLogin_dt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Notification_Master">
+          <Key>
+            <PropertyRef Name="Nid" />
+          </Key>
+          <Property Name="Nid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NDT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Service_Master">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Service_DT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IsDel" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="State_Master">
+          <Key>
+            <PropertyRef Name="StateId" />
+          </Key>
+          <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BeneficiaryMasters" Relationship="Self.FK_BeneficiaryMaster_State_Master" FromRole="State_Master" ToRole="BeneficiaryMaster" />
+          <NavigationProperty Name="City_Master" Relationship="Self.FK_City_Master_State_Master" FromRole="State_Master" ToRole="City_Master" />
+        </EntityType>
+        <Association Name="FK_BeneficiaryMaster_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="0..1" />
+          <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="BeneficiaryMaster">
+              <PropertyRef Name="RelatedCityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BeneficiaryMaster_State_Master">
+          <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+          <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Master">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="BeneficiaryMaster">
+              <PropertyRef Name="RelatedStateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Block_Master_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+          <End Role="Block_Master" Type="Self.Block_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="Block_Master">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Master_City_Master">
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+          <End Role="City_Master1" Type="Self.City_Master" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="City_Master">
+              <PropertyRef Name="CityId" />
+            </Principal>
+            <Dependent Role="City_Master1">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Master_State_Master">
+          <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+          <End Role="City_Master" Type="Self.City_Master" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State_Master">
+              <PropertyRef Name="StateId" />
+            </Principal>
+            <Dependent Role="City_Master">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Panchyat_DBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apply_Master" EntityType="Self.Apply_Master" />
+          <EntitySet Name="BeneficiaryMasters" EntityType="Self.BeneficiaryMaster" />
+          <EntitySet Name="Block_Master" EntityType="Self.Block_Master" />
+          <EntitySet Name="City_Master" EntityType="Self.City_Master" />
+          <EntitySet Name="Enquiry_Master" EntityType="Self.Enquiry_Master" />
+          <EntitySet Name="Feedback_Master" EntityType="Self.Feedback_Master" />
+          <EntitySet Name="Login_Master" EntityType="Self.Login_Master" />
+          <EntitySet Name="Notification_Master" EntityType="Self.Notification_Master" />
+          <EntitySet Name="Service_Master" EntityType="Self.Service_Master" />
+          <EntitySet Name="State_Master" EntityType="Self.State_Master" />
+          <AssociationSet Name="FK_BeneficiaryMaster_City_Master" Association="Self.FK_BeneficiaryMaster_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BeneficiaryMaster_State_Master" Association="Self.FK_BeneficiaryMaster_State_Master">
+            <End Role="State_Master" EntitySet="State_Master" />
+            <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMasters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Block_Master_City_Master" Association="Self.FK_Block_Master_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="Block_Master" EntitySet="Block_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Master_City_Master" Association="Self.FK_City_Master_City_Master">
+            <End Role="City_Master" EntitySet="City_Master" />
+            <End Role="City_Master1" EntitySet="City_Master" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Master_State_Master" Association="Self.FK_City_Master_State_Master">
+            <End Role="State_Master" EntitySet="State_Master" />
+            <End Role="City_Master" EntitySet="City_Master" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Panchyat_DBModel1StoreContainer" CdmEntityContainer="Panchyat_DBEntities1">
+          <EntitySetMapping Name="Apply_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Apply_Master">
+              <MappingFragment StoreEntitySet="Apply_Master">
+                <ScalarProperty Name="AId" ColumnName="AId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="Apply_DT" ColumnName="Apply_DT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BeneficiaryMasters">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.BeneficiaryMaster">
+              <MappingFragment StoreEntitySet="BeneficiaryMaster">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="AdharNo" ColumnName="AdharNo" />
+                <ScalarProperty Name="RelatedStateId" ColumnName="RelatedStateId" />
+                <ScalarProperty Name="RelatedCityId" ColumnName="RelatedCityId" />
+                <ScalarProperty Name="RelatedBlockId" ColumnName="RelatedBlockId" />
+                <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="BeneficiaryPicName" ColumnName="BeneficiaryPicName" />
+                <ScalarProperty Name="AdharPicName" ColumnName="AdharPicName" />
+                <ScalarProperty Name="RegDT" ColumnName="RegDT" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Block_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Block_Master">
+              <MappingFragment StoreEntitySet="Block_Master">
+                <ScalarProperty Name="BlockId" ColumnName="BlockId" />
+                <ScalarProperty Name="BlockName" ColumnName="BlockName" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.City_Master">
+              <MappingFragment StoreEntitySet="City_Master">
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enquiry_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Enquiry_Master">
+              <MappingFragment StoreEntitySet="Enquiry_Master">
+                <ScalarProperty Name="EnquiryId" ColumnName="EnquiryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="Enquiry_Msg" ColumnName="Enquiry_Msg" />
+                <ScalarProperty Name="Enquiry_dt" ColumnName="Enquiry_dt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedback_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Feedback_Master">
+              <MappingFragment StoreEntitySet="Feedback_Master">
+                <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+                <ScalarProperty Name="FeedbackTitle" ColumnName="FeedbackTitle" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Feedback_DT" ColumnName="Feedback_DT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Login_Master">
+              <MappingFragment StoreEntitySet="Login_Master">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="LCount" ColumnName="LCount" />
+                <ScalarProperty Name="LastLogin_dt" ColumnName="LastLogin_dt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Notification_Master">
+              <MappingFragment StoreEntitySet="Notification_Master">
+                <ScalarProperty Name="Nid" ColumnName="Nid" />
+                <ScalarProperty Name="NMsg" ColumnName="NMsg" />
+                <ScalarProperty Name="NDT" ColumnName="NDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.Service_Master">
+              <MappingFragment StoreEntitySet="Service_Master">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Service_DT" ColumnName="Service_DT" />
+                <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="State_Master">
+            <EntityTypeMapping TypeName="Panchyat_DBModel1.State_Master">
+              <MappingFragment StoreEntitySet="State_Master">
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

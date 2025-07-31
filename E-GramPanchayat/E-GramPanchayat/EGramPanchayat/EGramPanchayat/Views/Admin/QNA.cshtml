@@ -1,0 +1,453 @@
+﻿
+@{
+    ViewBag.Title = "QNA";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<script src="~/Content/js/qna.js"></script>
+<script src="~/Content/js/ASPSnippets_Pager.min.js"></script>
+
+<style>
+    .inner-main_gry_bg.ptb .main_gry_bg {
+        border-radius: 0;
+        margin-top: 0;
+        width: 95%;
+        margin: 0 auto;
+        box-shadow: 0 1px 11px #dcdcdc;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-bottom: 40px;
+    }
+
+    .rq {
+        font-size: 22px;
+        top: -6px;
+    }
+
+    .main_gry_bg_list {
+        border: none;
+        background: #fff;
+        border-radius: 5px;
+        width: 98%;
+        margin-top: 35px !important;
+        margin-left: 1%;
+    }
+
+    #ddlPageSize {
+        padding-top: 0px;
+    }
+    /*----------------------------------paging------------------------------------*/
+    .Pager span {
+        min-width: 35px;
+        height: 33px;
+        padding: 5px 5px;
+        -webkit-border-radius: 5px;
+        text-align: center;
+        color: #000;
+        display: inline-block;
+        background-color: #E0F2F1;
+        margin-right: 3px;
+        line-height: 150%;
+        border: 1px solid #3AC0F2;
+    }
+
+    .Pager a {
+        min-width: 35px;
+        height: 33px;
+        padding: 5px 5px;
+        -webkit-border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        background-color: #fff !important;
+        color: #000;
+        border: 1px solid #3AC0F2 !important;
+        margin: 0 3px;
+        line-height: 150%;
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="main_gry_bg ptb">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                <span class="rq">Manage Page Schema</span>
+            </h2>
+            <hr class="hr_5" />
+
+            <div class="box-body">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <input type="hidden" id="AutoId" name="AutoId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group" style="margin-top: 8px;">
+                        <div class="col-sm-2">
+                            <label>URL: <span class="required"></span></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control border-primary req" id="txtUrl" placeholder="http:/www.example.com">
+                        </div>
+
+                        <div class="col-sm-2">
+                            <label>Status:<span class="required"> </span></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select class="form-control border-primary req" id="ddlStatus">
+                                <option value="" selected="selected">select..</option>
+                                <option value="1">Active</option>
+                                <option value="0">Inactive</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row form-group" style="margin-top: 8px;">
+                        <div class="col-sm-2">
+                            <label>Question:<span class="required"> </span></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <textarea class="form-control border-primary input-sm req" id="txtQuestion" style="padding: 4px" maxlength="500"></textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <label>Answer:<span class="required"> </span></label>
+                        </div>
+                        <div class="col-sm-4">
+                            <textarea class="form-control border-primary input-sm req" id="txtAnswer" style="padding: 4px"></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <ul class="list-inline" style="margin-top: 12px; margin-bottom: 15px;">
+                    <li>
+                        <button type="button" onclick="Save_data()" id="btnsave" class="btn btn-primary btn-save-new" style="margin: 0 auto; background-color: #e5a54b;">Save</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main_gry_bg_list">
+    <div class="col-md-12">
+        <h4>Manage Page List</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="tblFBS">
+                <thead>
+                    <tr>
+                        <th class="Id text-center">S.No</th>
+                        <th class="Url text-center">URL</th>
+                        <th class="Question text-center">Question</th>
+                        <th class="Answer text-center">Answer</th>
+                        <th class="Status text-center">Status</th>
+                        <th class="CreatedBy text-center">CreatedBy</th>
+                        <th class="action text-center" style="width: 10%">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tblData">
+                </tbody>
+            </table>
+            <h5 class="well text-center" id="EmptyTable" style="display: none">No data available.</h5>
+        </div>
+
+        <div class="form-group row" id="DivPager">
+            <div class="col-md-1">
+                <select class="form-control border-primary input-sm" id="ddlPageSize" onchange="getQNADetail(1)">
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    <option value="0">All</option>
+                </select>
+            </div>
+            <div class="col-md-11" style="display: flex; justify-content: flex-end;">
+                <div class="Pager" id="Pager"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        debugger;
+        getQNADetail(1);
+    });
+
+    function Pagevalue(e) {
+        getQNADetail(parseInt($(e).attr("page")));
+    };
+
+    function Save_data() {
+        debugger;
+        var data = {
+            Url: $('#txtUrl').val(),
+            Question: $('#txtQuestion').val(),
+            Answer: $('#txtAnswer').val(),
+            IsActive: $("#ddlStatus").val()
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Save_QNA_Data",
+            data: JSON.stringify({ pobj: data }),
+            contentType: "application/json; charset=utf-8",
+            datatype: "json",
+            success: function (result) {
+                alert(result);
+                //if (result.d == 'Session Expired') {
+                //    location.href = '/'
+                //}
+                //else if (result.d == 'true') {
+                    
+                    //swal("", "Record saved succesfully!", "success");
+                    resetQNA_Data();
+                    getQNADetail(1);
+                //} else {
+                //    //swal("Oops!", result.d, "error");
+                //}
+            },
+            error: function () {
+                alert("", "Oops! Something went wrong.Please try later.", "error");
+            },
+            failure: function () {
+                alert("", "Oops! Something went wrong.Please try later.", "error");
+            }
+        });
+
+    }
+    function resetQNA_Data() {
+        $('#txtUrl').val('');
+        $("#txtQuestion").val('');
+        $("#txtAnswer").val('');
+        $("#ddlStatus").val('');
+        $('#btnsave').attr('onclick', "Save_data()", 'style', "text-align:centre;");
+        $('#btnsave').html('Save');
+    }
+
+    function getQNADetail(PageIndex) {
+        debugger;
+        var data = {
+            PageIndex: PageIndex,
+            PageSize: $("#ddlPageSize").val(),
+        }
+        $.ajax({
+            type: "POST",
+            url: "/Admin/GetQNA_Data",
+            data: JSON.stringify({ pobj: data }),
+            contentType: "application/json; charset=utf-8",
+            datatype: "json",
+            success: function (response) {
+                debugger;
+                console.log(response);
+                if (response.d != "false") {
+                    var xml = $.parseXML(response.d);
+                    var pager = $(xml).find("Table");
+                    var data = $(xml).find("Table1");
+                    var count = 1;
+                    var x = '';
+                    if (data.length > 0) {
+                        $("#ddlPageSize").show();
+                        $("#EmptyTable").hide();
+                        $.each(data, function (i) {
+                            var sts = $(this).find("IsActive").text();
+                            if (sts == 1) {
+                                sts = "Active";
+                            }
+                            else if (sts == 0) {
+                                sts = "Inactive";
+                            }
+                            x += '<tr class="thead"><td class="Id text-center"  >' + Number(count)
+                                /*+ '</td><td class="Name text-center" >' + $(this).find("AutoId").text()*/
+                                + '</td><td class="Name text-center" >' + $(this).find("URL").text()
+                                + '</td><td class="Name text-center" >' + $(this).find("Question").text()
+                                + '</td><td class="Name text-center" >' + $(this).find("Answer").text()
+                                + '</td><td class="Name text-center" > ' + sts
+                                + '</td><td class="Name text-center" >' + $(this).find("CreatedBy").text()
+                                + '</a></td><td class="Subject text-center"><a href="javascript:void(0)"><i style="font-size: 15px;" onclick="edit(' + $(this).find("autoID").text() + ')" class="fa fa-pencil"></i></a>&emsp;' + ''
+                                + '<a href="javascript:void(0)"><i style="font-size: 15px;" onclick="deleteDocs(' + $(this).find("autoID").text() + ')" class="fa fa-trash"></i></a></td></tr>';
+                            count = count + 1
+                        });
+                        $('#tblData').html(x);
+                        $(this).find("Id").text();
+                    }
+                    else {
+                        $("#EmptyTable").show();
+                        $("#tblFBS").hide();
+                        $("#ddlPageSize").hide();
+                    }
+
+                    $(".Pager").ASPSnippets_Pager({
+                        ActiveCssClass: "current",
+                        PagerCssClass: "pager",
+                        PageIndex: parseInt(pager.find("PageIndex").text()),
+                        PageSize: parseInt(pager.find("PageSize").text()),
+                        RecordCount: parseInt(pager.find("RecordCount").text())
+                    });
+                }
+
+                else {
+                    location.href = '/admin/login-page';
+                }
+            },
+            error: function (result) {
+                //swal("Error deleting!", "Please try again", "error");
+            }
+
+        });
+    };
+
+    //function deleteDocs(Id) {
+    //    swal({
+    //        title: "Are you sure?",
+    //        text: "You want to delete record.",
+    //        icon: "warning",
+    //        showCancelButton: true,
+    //        closeOnClickOutside: false,
+    //        buttons: {
+    //            cancel: {
+    //                text: "No, cancel.",
+    //                value: null,
+    //                visible: true,
+    //                className: "btn-warning",
+    //                closeModal: true,
+    //            },
+    //            confirm: {
+    //                text: "Yes, delete it.",
+    //                value: true,
+    //                visible: true,
+    //                className: "",
+    //                closeModal: false
+    //            }
+    //        }
+    //    }).then(function (isConfirm) {
+    //        if (isConfirm) {
+    //            deleteDoc(Id);
+    //        }
+    //    })
+    //}
+    //function deleteDoc(Id) {
+    //    var data = {
+    //        AutoId: Id,
+    //    };
+
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Admin/QNA.aspx/removeQNA_Data",
+    //        data: JSON.stringify({ pobj: data }),
+    //        contentType: "application/json; charset=utf-8",
+    //        datatype: "json",
+    //        beforeSend: function () {
+
+    //        },
+    //        complete: function () {
+
+    //        },
+    //        success: function (response) {
+    //            if (response.d == "true") {
+    //                swal("", "Record deleted succesfully!", "success");
+    //                getQNADetail(1);
+    //                resetQNA_Data();
+    //            } else {
+    //                swal("", response.d, "error");
+    //            }
+
+    //        },
+    //        error: function (result) {
+    //            swal("", "Oops,record not deleted!!", "");
+    //        },
+    //        failure: function (result) {
+    //            swal("", 'Oops,some thing  wrong.Please try again.', "error");
+    //        }
+    //    });
+    //}
+
+    //function edit(Id) {
+    //    var data = {
+    //        AutoId: Id,
+    //    };
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Admin/QNA.aspx/EditQNA_Data",
+    //        data: JSON.stringify({ pobj: data }),
+    //        contentType: "application/json; charset=utf-8",
+    //        datatype: "json",
+    //        beforeSend: function () {
+    //        },
+    //        complete: function () {
+    //        },
+    //        success: function (response) {
+    //            if (response.d != "false") {
+    //                var xml = $.parseXML(response.d);
+    //                var data = $(xml).find("Table");
+    //                var x = '';
+    //                if (data.length > 0) {
+    //                    $.each(data, function (i) {
+    //                        debugger;
+    //                        $('#AutoId').val($(this).find("autoID").text());
+    //                        $('#txtUrl').val($(this).find("URL").text());
+    //                        $('#txtQuestion').val($(this).find("Question").text());
+    //                        $('#txtAnswer').val($(this).find("Answer").text());
+    //                        $('#ddlStatus').val($(this).find("IsActive").text());
+    //                        $('#btnsave').removeAttr('onclick');
+    //                        $('#btnsave').attr('onclick', "Update(" + $(this).find("AutoId").text() + ")", 'style', "text-align:centre;");
+    //                        $('#btnsave').html('Update');
+    //                    });
+    //                }
+    //                else {
+
+    //                }
+    //            }
+
+    //        },
+    //        error: function (result) {
+    //            swal("", 'Oops,some thing  wrong.Please try again.', "error");
+    //        }
+
+    //    });
+    //}
+    //function Update() {
+    //    var data = {
+
+    //        AutoId: $('#AutoId').val(),
+    //        Url: $('#txtUrl').val(),
+    //        Question: $('#txtQuestion').val(),
+    //        Answer: $('#txtAnswer').val(),
+    //        IsActive: $("#ddlStatus").val()
+    //    };
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Admin/QNA.aspx/UpdateQNA_Data",
+    //        data: JSON.stringify({ pobj: data }),
+    //        contentType: "application/json; charset=utf-8",
+    //        datatype: "json",
+    //        success: function (response) {
+    //            if (response.d == 'Session Expired') {
+    //                location.href = '/'
+    //            }
+    //            else if (response.d == "true") {
+    //                swal("", 'Record updated successfully!', "success");
+    //                resetQNA_Data();
+    //                getQNADetail(1);
+    //            } else {
+    //                swal("Oops!", response.d, "error");
+    //            }
+
+    //        },
+    //        error: function (result) {
+    //            swal("", 'Oops,some thing  wrong.Please try again.', "error");
+    //        },
+
+    //        failure: function (result) {
+    //            swal("", 'Oops,some thing  wrong.Please try again.', "error");
+    //        }
+    //    });
+
+    //}
+</script>
+

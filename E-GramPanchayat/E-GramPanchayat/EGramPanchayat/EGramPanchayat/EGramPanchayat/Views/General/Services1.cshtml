@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Services1";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    #back {
+        background-image: url('/Content/Images/WATER2.jpg');
+        min-height: 400px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .card:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 5px 5px 10px 1px rgba( 0, 0, 0, 0.496);
+    }
+
+    .card {
+        transition-duration: 2.4s;
+        transform: translateY(-30px);
+        background-color: antiquewhite;
+    }
+
+    #content:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 3px 3px 5px 1px rgba( 0, 0, 0, 0.496);
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $(".san").fadeIn(1500);
+        $("#img").fadeIn(6000);
+    })
+</script>
+<div >
+
+    <div class="row" style="margin:0px;padding:0px">
+        <div class="col-sm-12" id="back">
+            <div class="row">
+                <div class="col-sm-12" style="background-color:rgba( 0, 0, 0, 0.496); height:400px;">
+                    <div class="row">
+                        <div class="col-sm-6 text-light p-5 san" style=" height:300px;display:none;">
+                            <h1>Jal Jeevan Mission</h1>
+                            <h2>Jal Jeevan Mission, is envisioned to provide safe and adequate drinking water </h2>
+                        </div>
+                        <div class="col-sm-6 text-light  san " style=" height:300px; display:none;">
+                            <div class="row">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-2 mt-5">
+                                    
+                                </div>
+                                <div class="col-sm-5"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 mt-3 bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row ">
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian;"> Vision</h4>
+                            <p class="card-text" style="">
+
+                                Every rural household has drinking water supply in adequate quantity of prescribed quality on regular and long-term basis at affordable service delivery charges leading to improvement in living standards of rural communities.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Mission</h4>
+                            <p class="card-text">
+
+                                Jal Jeevan Mission is to assist, empower and facilitate:
+
+                                States/ UTs in planning of participatory rural water supply strategy for ensuring potable drinking water security on long-term basis to every rural household and public institution.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian">Objectives</h4>
+                            <p class="card-text">
+
+                                The broad objectives of the Mission are:
+
+                                To provide FHTC to every rural household.
+                                To prioritize provision of FHTCs in qualityaffected areas, villages in drought prone and desert areas, Sansad Adarsh Gram Yojana.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Components under JJM</h4>
+                            <p class="card-text">
+
+                                The following components are supported under JJM
+
+
+                                Efforts should be made to source funds from different sources/ programmes and convergence is the key
+
+                                Development of in-village.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row pt-4">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="~/Content/Images/Wa2.jpg" style="border-radius: 10px;" id="content" />
+                </div>
+                <div class="col-sm-6" style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;" id="content">
+                    <h3 class="text-center pt-3" style="font-family: Algerian; font-size: 20px;">जल जीवन मिशन</h3>
+                    <p class="p-1">
+                        <b style="font-size:20px;"> मोदी सरकार </b>2014 से लेकर अब तक के अपने कार्यकाल में घर-घर पीने योग्य पानी पहुंचाने को लेकर तमाम तरह की योजनाएं चला रही हैं. जिनमें जल जीवन मिशन स्कीम और हर घर जल योजना प्रमुख है. इन दोनों योजनाओं की लागत लाखों करोड़ों रुपये है. सरकार इन दोनों योजना को पूरी प्रतिबद्धता के साथ देशभर में लागू कर चुकी है. जहां वर्षों से लोगों को पानी लेने के लिए मीलों दूर जाना पड़ता था अब वहां हर घर पानी पाइप के जरिए पहुंच रहा है. लोगों को पानी मुहैया कराने के साथ-साथ जल संरक्षण को भी लेकर केंद्र सरकार काफी गंभीर है.
+                        <hr />
+                        साल 2019 में 15 अगस्त को सभा नागरिकों तक पानी की व्यवस्था घर-घर उपलब्ध कराने के लिए प्रधानमंत्री नरेंद्र मोदी द्वारा जल जीवन मिशन का शुभारंभ किया गया. इस मिशन के तहत ग्रामीण क्षेत्रों में रहने वाले लोगों को घरों में ही पीने के पानी के लिए जल कनेक्शन लगाए जा रहे हैं. केंद्र सरकार द्वारा इस योजना के कार्यान्वयन के लिए 360 लाख करोड़ रुपये का बजट तय किया गया है. देश के करीब 50 फीसदी ग्रामीण क्षेत्रों में पानी की समस्याओं से जूझना पड़ता है.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center pt-3" style="font-family: Algerian; font-size: 20px;"><b>जल जीवन मिशन</b></h1>
+
+            <h3 style="font-size:20px;" class="text-center pb-3">
+                हर घर नल योजना के लाभ तथा विशेषताएं
+            </h3>
+            <p style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;padding:10px">
+                हर घर नल योजना को केंद्र सरकार द्वारा आरंभ किया गया है।
+                देश के प्रत्येक घर तक स्वच्छ पीने के पानी उपलब्ध करवाने के उद्देश्य से इस योजना को आरंभ किया गया है।
+                इस योजना के माध्यम से सरकार द्वारा प्रत्येक घर तक नल का कनेक्शन उपलब्ध करवाया जाएगा।
+                हर घर नल योजना के अंतर्गत प्रत्येक घर तक स्वच्छ पानी उपलब्ध करवाने का लक्ष्य 2030 निर्धारित किया गया था। जिसे अब 2024 कर दिया गया है।
+                Har Ghar Nal Scheme को जल जीवन मिशन के नाम से भी जाना जाता है।
+                ग्रामीण इलाके में इस योजना के माध्यम से स्वच्छ पानी उपलब्ध हो सकेगा।
+                देश के प्रत्येक घर में स्वच्छ पीने का पानी उपलब्ध होगा जिससे कि देश के नागरिकों के स्वास्थ्य में भी सुधार आएगा।
+                यह योजना देश के नागरिकों को जीवन स्तर में भी सुधार करेगी।
+                अब देश के नागरिकों को पानी लेने के लिए कहीं दूर जाने की भी आवश्यकता नहीं पड़ेगी। क्योंकि सरकार द्वारा उनके घर में पानी की उपलब्धता सुनिश्चित की जाएगी।
+                इस योजना का लक्ष्य 55 लीटर प्रति व्यक्ति प्रतिदिन की दर से पीने योग्य जल उपलब्ध करवाना है।
+            </p>
+        </div>
+    </div>
+
+
+
+</div>
+
+

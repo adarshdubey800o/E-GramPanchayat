@@ -1,0 +1,241 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|c:\\users\\adarsh dubey\\desktop\\e-grampanchayat\\e-grampanchayat\\egrampanchayat\\egrampanchayat\\models\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\models\\dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|c:\\users\\adarsh dubey\\desktop\\e-grampanchayat\\e-grampanchayat\\egrampanchayat\\egrampanchayat\\controllers\\generalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\controllers\\generalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\models\\pl_qna_master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\models\\pl_qna_master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\admin\\qna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\admin\\qna.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\admin\\managebeneficiary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\admin\\managebeneficiary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\admin\\manageservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\admin\\manageservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\admin\\sendsms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\admin\\sendsms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\admin\\addservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\admin\\addservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\shared\\admin_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\shared\\admin_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\shared\\user_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\shared\\user_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\egrampanchayat\\views\\shared\\general_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF088017-AFF6-4A8A-92B3-E3213A7C762F}|EGramPanchayat\\EGramPanchayat.csproj|solutionrelative:egrampanchayat\\views\\shared\\general_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DBManager.cs",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Models\\DBManager.cs",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Models\\DBManager.cs",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Models\\DBManager.cs",
+              "RelativeToolTip": "EGramPanchayat\\Models\\DBManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T18:05:33.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\AddServices.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Admin\\AddServices.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\AddServices.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Admin\\AddServices.cshtml",
+              "ViewState": "AgIAADABAAAAAAAAAIAwwDsBAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManageServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\ManageServices.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Admin\\ManageServices.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\ManageServices.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Admin\\ManageServices.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAAC4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "EGramPanchayat\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:45:32.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "User_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\User_Layout.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Shared\\User_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\User_Layout.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Shared\\User_Layout.cshtml",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAAGwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeneralController.cs",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\GeneralController.cs",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Controllers\\GeneralController.cs",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\GeneralController.cs",
+              "RelativeToolTip": "EGramPanchayat\\Controllers\\GeneralController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:45:32.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PL_QNA_Master.cs",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Models\\PL_QNA_Master.cs",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Models\\PL_QNA_Master.cs",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Models\\PL_QNA_Master.cs",
+              "RelativeToolTip": "EGramPanchayat\\Models\\PL_QNA_Master.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAvwEQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:45:32.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EGramPanchayat\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T17:45:32.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SendSMS.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\SendSMS.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Admin\\SendSMS.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\SendSMS.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Admin\\SendSMS.cshtml",
+              "ViewState": "AgIAAOUAAAAAAAAAAIAwwPAAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManageBeneficiary.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\ManageBeneficiary.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Admin\\ManageBeneficiary.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\ManageBeneficiary.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Admin\\ManageBeneficiary.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QNA.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\QNA.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Admin\\QNA.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Admin\\QNA.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Admin\\QNA.cshtml",
+              "ViewState": "AgIAAOQAAAAAAAAAAAAqwPkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Admin_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\Admin_Layout.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Shared\\Admin_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\Admin_Layout.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Shared\\Admin_Layout.cshtml",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAGoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "General_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\General_Layout.cshtml",
+              "RelativeDocumentMoniker": "EGramPanchayat\\Views\\Shared\\General_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Adarsh dubey\\Desktop\\E-GramPanchayat\\E-GramPanchayat\\EGramPanchayat\\EGramPanchayat\\Views\\Shared\\General_Layout.cshtml",
+              "RelativeToolTip": "EGramPanchayat\\Views\\Shared\\General_Layout.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAM8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-31T17:45:32.695Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

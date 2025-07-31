@@ -1,0 +1,199 @@
+﻿
+@{
+    ViewBag.Title = "Services4";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    #back {
+        background-image: url('/Content/Images/HOMEnew.jpg');
+        min-height: 400px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .card:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 5px 5px 10px 1px rgba( 0, 0, 0, 0.496);
+    }
+
+    .card {
+        transition-duration: 2.4s;
+        transform: translateY(-30px);
+        background-color: antiquewhite;
+    }
+
+    #content:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 3px 3px 5px 1px rgba( 0, 0, 0, 0.496);
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $(".san").fadeIn(3000);
+        $("#img").fadeIn(7000);
+    })
+</script>
+<div class="container-fluid p-0">
+
+    <div class="row" style="margin:0px;padding:0px">
+        <div class="col-sm-12" id="back">
+            <div class="row">
+                <div class="col-sm-12" style="background-color:rgba( 0, 0, 0, 0.496); height:400px;">
+                    <div class="row">
+                        <div class="col-sm-6 text-light p-5 san" style=" height:300px;display:none;">
+                            <h1>
+                                प्रधानमंत्री आवास योजना
+                            </h1>
+
+                        </div>
+                        <div class="col-sm-6 text-light  san " style=" height:300px; display:none;">
+                            <div class="row">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-2 mt-5">
+                                    @*<button class="form-control mt-5 btn-success btn-outline-light">Button</button>*@
+                                </div>
+                                <div class="col-sm-5"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 mt-3 bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row ">
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian;"> Introduction</h4>
+                            <p class="card-text" style="">
+
+                                प्रधानमंत्री आवास योजना ग्रामीण सूची क्या है?
+                                प्रधानमंत्री आवास योजना के तहत देश के गरीब और बेघर लोगों को घर बनवाने के लिए सहायता राशि दी जाती है, और इस राशि की मदद से गरीबी रेखा के नीचे जीवन यापन करने वाले नागरिक, खुद का घर बनवाने में सक्षम हो पाते हैं, PM Awas Yojana के द्वारा भारत के बेघर और गरीब नागरिकों को आवास देने का कार्य सरकार के द्वारा लगातार किया जा रहा है |
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Mission</h4>
+                            <p class="card-text">
+                                ऐसे में जो लोग शहरों में रहते हैं, उनका नाम आवास की शहरी लाभार्थी सूची में जारी किया जाता है, इसके अलावा ग्रामीण अंचल के लोगों का नाम ग्रामीण सूची में जारी किया जाता है. अगर आप ग्रामीण क्षेत्र में रहने वाले नागरिक हैं, तो आप Pradhan Mantri Awas Yojana Gramin List में अपने नाम की जांच कर सकते हैं. प्रधानमंत्री आवास योजना ग्रामीण सूची की जांच करने की पूरी प्रक्रिया मैंने इस लेख में नीचे बताई है
+
+
+
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian">History</h4>
+                            <p class="card-text">
+
+
+                                इससे पहले PM आवास योजना को इंदिरा आवास योजना (IAY) के नाम से जाना जाता था, जिसे साल 1985 में शुरू किया गया था, इसी योजना को साल 2015 में बदलकर प्रधानमंत्री आवास योजना कर दिया गया, PMGAY जिसे Pradhan Mantri Awas Yojana Gramin के नाम से जाना जाता है, PM आवास योजना का ही एक भाग है, बशर्ते इसके तहत सिर्फ ग्रामीण इलाके के लोगों को आवास योजना का लाभ दिया जाता है.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Use</h4>
+                            <p class="card-text">
+
+                                PM Awas Yojana Gramin List कैसे देखें?
+                                PM Awas Yojana Gramin List देखने के लिए सबसे पहले आपको PMAY-G के आधिकारिक पोर्टल पर जाना होगा, इसके बाद आप यहाँ Menu में Awassoft के विकल्प पर क्लिक करें, इसके बाद आप Report के विकल्प पर क्लिक करें, अब आप नए पेज पर अपने राज्य का नाम, जिले का नाम, गाँव का नाम और कैप्चा की मदद से आप अपने गाँव की आवास लिस्ट देख सकते हैं.
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row pt-4">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="~/Content/Images/HOME.jpg" style="border-radius: 10px;" id="content" />
+                </div>
+                <div class="col-sm-6" style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;" id="content">
+                    <h3 class="text-center pt-1" style="font-family: Algerian; font-size: 20px;">PM Awas Gramin List 2024</h3>
+                    <p class="p-1">
+
+                        हमारे देश में गरीबों के हित के लिए अक्सर भारत सरकार द्वारा नई-नई योजनाओं की शुरुआत की जाती है, PMAY-G जिसे प्रधानमंत्री आवास योजना ग्रामीण कहा जाता है, भी ऐसी ही एक लाभकारी योजना है, Pradhan Mantri Awas Yojana Gramin के तहत भारत में रहने वाले गरीब और बेघर लोगों को आवास की सुविधा प्रदान करायी जाती है, इस योजना के तहत PM Awas Gramin List / प्रधानमंत्री आवास योजना ग्रामीण सूची जारी की जाती है, और इसमें अंकित सभी लाभार्थियों को अपना खुद का घर बनवाने के लिए सहायता राशि प्रदान की जाती है. इस आर्थिक सहायता से गरीब वर्ग के लोगों को काफी लाभ पहुंचा है, तथा उनकों आवास का लाभ प्राप्त हुआ है.
+
+                        इससे पहले PM आवास योजना को इंदिरा आवास योजना (IAY) के नाम से जाना जाता था, जिसे साल 1985 में शुरू किया गया था, इसी योजना को साल 2015 में बदलकर प्रधानमंत्री आवास योजना कर दिया गया, PMGAY जिसे Pradhan Mantri Awas Yojana Gramin के नाम से जाना जाता है, PM आवास योजना का ही एक भाग है, बशर्ते इसके तहत सिर्फ ग्रामीण इलाके के लोगों को आवास योजना का लाभ दिया जाता है
+
+
+
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row pt-3">
+        <div class="col-sm-12 pt-5">
+            <div class="card-group">
+                <div class="card">
+                    <img src="~/Content/Images/HOME3.jpg" class="card-img-top img-fluid" alt="..." style="height:300px">
+
+                </div>
+                <div class="card">
+                    <img src="~/Content/Images/HOME4.png" class="card-img-top img-fluid" alt="..." style="height:300px;">
+
+                </div>
+                <div class="card">
+                    <img src="~/Content/Images/Home5.jpeg" class="card-img-top img-fluid" alt="..." style="height:300px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center pt-2" style="font-family: Algerian; font-size: 20px;"><b>पात्रता</b></h1>
+
+
+            <p style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;padding:10px">
+                यह सुनिश्चित करने के लिए कि पीएमएवाई-जी उन लोगों को सहायता प्रदान करता है जो वास्तव में वंचित हैं और चयन उद्देश्यपूर्ण और सत्यापन योग्य है, यह सामाजिक आर्थिक और जाति जनगणना (एसईसीसी) 2011 डेटा में आवास अभाव मापदंडों का उपयोग करके लाभार्थियों का चयन करता है। एसईसीसी डेटा परिवारों के बीच आवास से संबंधित विशिष्ट अभाव को दर्शाता है। डेटा का उपयोग करके, ऐसे घर जो बेघर हैं और 0,1,2 कच्ची दीवार और कच्ची छत वाले घरों में रह रहे हैं, उन्हें अलग किया जा सकता है और लक्षित किया जा सकता है। उत्पन्न स्थायी प्रतीक्षा सूची यह भी सुनिश्चित करती है कि राज्यों के पास आने वाले वर्षों में (वार्षिक चयन सूचियों के माध्यम से) योजना के तहत कवर किए जाने वाले परिवारों की सूची तैयार है, जिससे कार्यान्वयन की बेहतर योजना बन सकेगी.
+
+
+            </p>
+        </div>
+    </div>
+
+
+
+
+</div>
+

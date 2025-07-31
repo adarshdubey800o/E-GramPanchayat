@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Panchyat_DBModelStoreContainer" CdmEntityContainer="Panchyat_DBEntities">
+    <EntitySetMapping Name="Apply_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Apply_Master">
+        <MappingFragment StoreEntitySet="Apply_Master">
+          <ScalarProperty Name="AId" ColumnName="AId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="Apply_DT" ColumnName="Apply_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BeneficiaryMasters">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.BeneficiaryMaster">
+        <MappingFragment StoreEntitySet="BeneficiaryMaster">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AdharNo" ColumnName="AdharNo" />
+          <ScalarProperty Name="RelatedStateId" ColumnName="RelatedStateId" />
+          <ScalarProperty Name="RelatedCityId" ColumnName="RelatedCityId" />
+          <ScalarProperty Name="RelatedBlockId" ColumnName="RelatedBlockId" />
+          <ScalarProperty Name="VillageName" ColumnName="VillageName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="BeneficiaryPicName" ColumnName="BeneficiaryPicName" />
+          <ScalarProperty Name="AdharPicName" ColumnName="AdharPicName" />
+          <ScalarProperty Name="RegDT" ColumnName="RegDT" />
+          <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Block_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Block_Master">
+        <MappingFragment StoreEntitySet="Block_Master">
+          <ScalarProperty Name="BlockId" ColumnName="BlockId" />
+          <ScalarProperty Name="BlockName" ColumnName="BlockName" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.City_Master">
+        <MappingFragment StoreEntitySet="City_Master">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Enquiry_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Enquiry_Master">
+        <MappingFragment StoreEntitySet="Enquiry_Master">
+          <ScalarProperty Name="EnquiryId" ColumnName="EnquiryId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="Topic" ColumnName="Topic" />
+          <ScalarProperty Name="Enquiry_Msg" ColumnName="Enquiry_Msg" />
+          <ScalarProperty Name="Enquiry_dt" ColumnName="Enquiry_dt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedback_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Feedback_Master">
+        <MappingFragment StoreEntitySet="Feedback_Master">
+          <ScalarProperty Name="FeedbackId" ColumnName="FeedbackId" />
+          <ScalarProperty Name="FeedbackTitle" ColumnName="FeedbackTitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Feedback_DT" ColumnName="Feedback_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Login_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Login_Master">
+        <MappingFragment StoreEntitySet="Login_Master">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LCount" ColumnName="LCount" />
+          <ScalarProperty Name="LastLogin_dt" ColumnName="LastLogin_dt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notification_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Notification_Master">
+        <MappingFragment StoreEntitySet="Notification_Master">
+          <ScalarProperty Name="Nid" ColumnName="Nid" />
+          <ScalarProperty Name="NMsg" ColumnName="NMsg" />
+          <ScalarProperty Name="NDT" ColumnName="NDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.Service_Master">
+        <MappingFragment StoreEntitySet="Service_Master">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Service_DT" ColumnName="Service_DT" />
+          <ScalarProperty Name="IsDel" ColumnName="IsDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State_Master">
+      <EntityTypeMapping TypeName="Panchyat_DBModel.State_Master">
+        <MappingFragment StoreEntitySet="State_Master">
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

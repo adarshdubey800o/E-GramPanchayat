@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    #About {
+        min-height: 200px;
+        background-color: #808080;
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url('../../Content/Images/banner.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
+
+<div class="col-sm-12">
+    <div class="text-white" id="About">
+        <h1 style="padding-top: 25px; padding-bottom: 25px; text-align: center; font-family: Algerian; color: white;font-size:50px">About Us</h1>
+        <h3 style="padding-top:2px; margin-left:20px;color:darkorange">सबका साथ  <img src="~/Content/Images/f2.png" style="height:40px; width:60px;" /> </h3>
+
+        <h3 style="padding-left:110px;"> सबका विकास</h3>
+    </div>
+
+
+
+    <div id="myCarousel" class="carousel slide p-0" data-bs-ride="carousel">
+
+        <div class="carousel-inner ">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/bgsybanner.jpg" style="height:500px;width:100%;" />
+            </div>
+        </div>
+    </div>
+    <h2 style="padding-top: 50px; text-align: center;  font-family: Algerian; color: blue;">Some Feature of E GramPanchyat.</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" style="text-align:center;padding-top:40px;padding-bottom:60px; color:orangered;font-style:italic; font-size:18px">
+                <p>
+                    The central government has decided to launch the People's Plan Campaign, also known as “Sabki Yojana Sabka Vikas” from September 2019.
+
+                    It aims to draw up Gram Panchayat Development Plans (GPDPs) in the country and place them on a website where anyone can see the status of the various government’s flagship schemes.
+                </p>
+                <p>
+                    Gram Panchayats have been mandated for the preparation of GPDP for economic development and social justice utilizing the resources available to them.
+                    The GPDP planning process will be comprehensive and participatory by involving full convergence with the schemes of all related Central Ministries / Line Departments.
+                    The People's Plan Campaign initiated under "Sabki Yojana Sabka Vikas" is an intensive and structured exercise for planning at Gram Sabha through convergence between Panchayati Raj Institutions (PRIs) and concerned departments of the State.
+                </p>
+            </div>
+            <div class="col-sm-2"></div>
+
+        </div>
+    </div>
+
+    @*start*@
+
+    <div class="container marketing">
+
+        @*3 circle pic*@
+        <div class="row" style="padding-top: 50px; padding-left: 40px; background-image: url('/content/images/bg7.jpg'); border-radius: 10px" id="t1">
+            <div class="col-lg-4">
+                <img src="~/content/images/modi1.jpeg" class="img-circle" alt="cinque terre" width="250" height="250" style="border-radius:50%;" />
+
+                <h4>prime minister of india.</h4>
+
+            </div>
+            <div class="col-lg-4">
+                <img src="~/content/images/yogi.jpeg" class="img-circle" alt="cinque terre" width="250" height="250" style="border-radius:50%;" />
+
+
+                <h4>chief minister of up</h4>
+
+            </div>
+
+            <div class="col-lg-4">
+                <img src="~/content/images/ma.jpg" class="img-circle" alt="cinque terre" width="250" height="250" style="border-radius:50%;" />
+
+
+                <h4>mahatma gandhi.</h4>
+
+            </div>
+        </div>
+
+        start the featurettes
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+
+            <div class="col-md-5" style="background-image:linear-gradient(0deg, #ffdee9 10%, #b5fffc 90%); border-radius: 10px" id="t2">
+                <h2 class="featurette-heading pt-lg-5" style="color:brown">government launched ‘sabki yojna sabka vikas’ preparation of gram panchayat development plan (gpdp). <span class="text-muted">it’ll blow your mind.</span></h2>
+                <p class="lead pt-4 " style="color:blue;">
+                    mollit anim laborum duis au dolor in voluptate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillum.
+                </p>
+
+                <span style="font-size:20px; color:blue">
+                    sabki yojana sabka vikas is an effective strategy for ensuring the preparation of gpdp in a campaign mode by endeavouring to converge all resources available at panchayat level related to 29 subjects listed in the eleventh schedule of the constitution. .
+                </span>
+            </div>
+            <div class="col-md-7">
+                <img src="~/content/images/b1.jpg" style="width:100%;height:500px;" />
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-6 order-md-2" style="background-image: linear-gradient(0deg, #cbf9d1 10%, #b5fffc 90%); border-radius: 10px" id="">
+                <h2 class="featurette-heading pt-4">teamwork . <span class="text-muted">"leadership advice",</span></h2>
+                <p class="lead pt-4">is the engine for a high performance work culture.</p>
+                <p style="color:navy;font-size:18px;">the secret to success is good ledership is all about making the lives of your team members or workers better. delegating is essential, but remember that leaders who empower their team rather then over-delegate build a culture of trust. find the right balance and offer guidance without micromanaging.  a good leader is a person who takes a little more than his share of the blame and a little less than his share of the credit. a leader i s like a shepherd he stays behind the flock letting the most nimble go out ahead, not realizing that all along they are being directed from behind.</p>
+            </div>
+            <div class="col-md-6 order-md-1">
+                <img src="~/content/images/home.jpg" style="width:100%;height:400px;border-radius:5px;" />
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette" style="height:500px;">
+            <div class="col-md-7" style="background-image: linear-gradient(0deg, #f4d77d 10%, #c5a6f7 100%); border-radius: 10px;">
+                <h2 class="featurette-heading" style="color:darkblue;margin-top:20px;">gram panchayat development plans <span class="text-muted"></span></h2>
+                <span class="lead" style="color:black;padding-top:20px;"> the campaign aimed to help gram panchayats (gps) in preparation of convergent and holistic gpdp through identification of sectoral infrastructural gaps in respective areas. the approval of gpdp for the year 2021-22, well in advance, will provide gps full year for implementation and effective monitoring of works. the states will, thus, be in full readiness for effectively utilising the resources available with them and other schematic interventions under gpdp during 2021-22.the campaign aimed to help gram panchayats (gps) in preparation of convergent and holistic gpdp through identification of sectoral infrastructural gaps in respective areas. the approval of gpdp for the year 2021-22, well in advance, will provide gps full year for implementation and effective monitoring of works. the states will, thus</span>
+            </div>
+            <div class="col-md-5">
+                <img src="~/content/images/a1.jpg" style="width:100%;height:500px; border-radius:5px; mouse:hover;" />
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+    </div>
+
+
+</div>

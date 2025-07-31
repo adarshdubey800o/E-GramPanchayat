@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    #backimg {
+        background-image: url('/Content/Images/Panchayati-Raj.jpg');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        min-height: 500px;
+    }
+
+    #backimg1 {
+        background-color: rgba(0, 0, 0, 0.646);
+        color: white;
+        min-height: 500px;
+    }
+
+    .clr {
+        color: #FFC300;
+    }
+
+    .clrC {
+        color: #FF5733;
+    }
+
+    .clr1 {
+        background-color: #03bfff;
+    }
+
+    .styup {
+        transform: translateY(-100px);
+    }
+
+        .styup:hover {
+            transition-duration: 2s;
+        }
+
+    .styup1 {
+        border: 0px solid white;
+        box-shadow: 0px 0px 0px 2px rgb(215, 213, 213);
+    }
+    div.scroll-container {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px;
+    }
+
+        div.scroll-container img {
+            padding: 10px;
+        }
+</style>
+
+    <div class="container-fluid">
+        <!-- // background-start -->
+        <div class="row">
+            <div class="col-sm-12" id="backimg">
+                <div class="row pt-5" id="backimg1">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6" style="text-align: center;">
+                        <span style="font-size: 5vh;font-weight: bold;">E Gram Panchayat...<br>“भारत सरकार  <span class="clr">दो भागों में विभाजित है स्थानीय सरकार और केंद्र सरकार। पंचायत स्थानीय सरकार का अंग है। पंचायती राज ग्रामीण स्तर पर सरकार है जो ग्रामीणों की सभी जरूरतों का ख्याल रखती है।”</span></span>
+
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+        </div>
+        <!-- background end  -->
+        <!-- middle section vehicle Categories start -->
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 styup">
+                <div class="card w-100 styup1" style="width: 18rem;">
+                    <img src="~/Content/Images/WATER.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title clrC text-center" style="font-family:Algerian;">JAl Pariyojna</h5>
+                        <p class="card-text">Jal Jeevan Mission, is envisioned to provide safe and adequate drinking water.</p>
+                        <a href="/General/Services1"><input style="background-color: rgb(3, 201, 250);color:white;height: 35px;width: 140px;border: none;border-radius: 5px;font-weight:500;" type="button" value="Visit"  /></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 styup">
+                <div class="card w-100 styup1" style="width: 18rem;">
+                    <img src="~/Content/Images/Aayushman-Bharat-Yojana.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title clrC text-center" style="font-family:Algerian">AYUSHMAN Bharat</h5>
+                        <p class="card-text">The Ayushman Bharat Digital Mission (ABDM) aims to develop the backbone to country.</p>
+                        <a href="/General/Services2"> <input style="background-color: rgb(3, 201, 250);color:white;height: 35px;width: 140px;border: none;border-radius: 5px;font-weight:500;" type="button" value="Visit"  /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 styup">
+                <div class="card w-100 styup1" style="width: 18rem;">
+                    <img src="~/Content/Images/SCHOOL7.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title clrC text-center" style="font-family:Algerian">School</h5>
+                        <p class="card-text">Sarva Shiksha Abhiyan, or SSA, is an Indian Government programme aimed .</p>
+                        <a href="/General/Services3">
+                            <input style="background-color: rgb(3, 201, 250);color:white;height: 35px;width: 145px;border: none;border-radius: 5px;font-weight:500;" type="button" value="Visit"
+                                   />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 styup">
+                <div class="card w-100 styup1" style="width: 18rem;">
+                    <img src="~/Content/Images/HOME.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title clrC text-center" style="font-family:Algerian">Awas Yojana</h5>
+                        <p class="card-text">Pradhan Mantri Awas Yojana (Urban) Mission launched on 25th June 2015 . Indian Government.
+                        </p>
+                        <a href="/General/Services4">
+                            <input style="background-color: rgb(3, 201, 250);color:white;height: 35px;width: 140px;border: none;border-radius: 5px;font-weight:500;" type="button" value="Visit"
+                                    />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        
+        <!--Slider.-->
+        <div class="scroll-container" style="margin-top:15px;">
+            <img src="~/Content/Images/HOME.jpg" alt="Cinque Terre" width="600" height="400">
+            <img src="~/Content/Images/Img 11.jpg" alt="Forest" width="600" height="400">
+            <img src="~/Content/Images/IMG AG1.jpg" alt="Northern Lights" width="600" height="400">
+            <img src="~/Content/Images/SCHOOL.jpg" alt="Mountains" width="600" height="400">
+            <img src="~/Content/Images/WATER3.jpg" alt="Cinque Terre" width="600" height="400">
+            <img src="~/Content/Images/SM1074941.jpg" alt="Forest" width="600" height="400">
+            <img src="~/Content/Images/IMG AG5.jpg" alt="Northern Lights" width="600" height="400">
+            <img src="~/Content/Images/SCHOOL5.jpg" alt="Mountains" width="600" height="400">
+        </div>
+
+
+</div>
+
+    
+
+

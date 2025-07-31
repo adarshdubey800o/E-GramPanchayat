@@ -1,0 +1,318 @@
+﻿
+@{
+    ViewBag.Title = "UpdateNotification";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model Notification_Master
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .err {
+        color: red;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    body, input, textarea, a {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #section-wrapper {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .box-wrapper {
+        position: relative;
+        /*display: table;*/
+        /*width:1100px;*/
+        margin: auto;
+        margin-top: 65px;
+        margin-bottom: 65px;
+        border-radius: 30px;
+    }
+
+    .info-wrap {
+        width: 35%;
+        /* height: 551px;*/
+        padding: 40px;
+        float: left;
+        display: block;
+        min-height: 560px;
+        border-radius: 30px 0px 0px 30px;
+        background: linear-gradient(144deg, rgba(126,39,156,1) 0%, rgba(49,39,157,1) 49%);
+        color: #fff;
+    }
+
+    .info-title {
+        text-align: left;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+
+    .info-sub-title {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 17px;
+        letter-spacing: 0.5px;
+        line-height: 26px;
+    }
+
+    .info-details {
+        list-style: none;
+        margin: 60px 0px;
+    }
+
+        .info-details li {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+            .info-details li i {
+                background: #F44770;
+                padding: 5px;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+
+            .info-details li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+                .info-details li a:hover {
+                    color: #F44770;
+                }
+
+    .social-icons {
+        list-style: none;
+        text-align: center;
+        margin: 20px 0px;
+    }
+
+        .social-icons li {
+            display: inline-block;
+        }
+
+            .social-icons li i {
+                background: #F44770;
+                color: #fff;
+                padding: 15px;
+                font-size: 15px;
+                border-radius: 22%;
+                margin: 0px 5px;
+                cursor: pointer;
+                transition: all .5s;
+            }
+
+                .social-icons li i:hover {
+                    background: #fff;
+                    color: #000000;
+                }
+
+    .form-wrap {
+        width: 65%;
+        float: right;
+        padding: 40px 25px 35px 25px;
+        border-radius: 0px 30px 30px 0px;
+        background: #ecf0f3;
+    }
+
+    .form-title {
+        text-align: left;
+        margin-left: 23px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+
+    .form-fields {
+        display: table;
+        width: 100%;
+        padding: 15px 5px 5px 5px;
+    }
+
+        .form-fields input,
+        .form-fields textarea {
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            color: #555;
+            padding: 20px 10px 20px 5px;
+            width: 100%
+        }
+
+        .form-fields textarea {
+            height: 150px;
+            resize: none;
+        }
+
+    .form-group {
+        width: 46%;
+        padding: 0px 30px;
+        margin: 14px 12px;
+        border-radius: 25px;
+        box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+    }
+
+    .form-fields .form-group:last-child {
+        width: 96%;
+    }
+
+    #submit-button {
+        width: 76%;
+        height: 60px;
+        margin: 0px 12px;
+        border-radius: 30px;
+        font-size: 20px;
+        font-weight: 700;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background: #F44770;
+        box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+        transition: .5s;
+        margin-bottom: 20px;
+        margin-left: 100px;
+    }
+
+        #submit-button:hover {
+            background: #31279d;
+        }
+
+
+    .firstdiv {
+        background: #555;
+        color: #fff;
+        border-radius: 30px 0px 0px 30px;
+    }
+
+    .secnddiv {
+        border-radius: 0px 30px 30px 0px;
+        background: #ecf0f3;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $("#top").focus();
+        $("#submit-button").click(function () {
+            var status = true;
+            var Topics, message;
+            Topics = $("#top").val().trim();
+            message = $("#msg").val().trim();
+
+            $(".err").remove();
+            // validate topic
+            if (Topics.length == 0) {
+                $("#top").after("<span class='err'>Please enter your topic.</span>");
+                status = false;
+            }
+
+            //validate msg
+
+            if (message.length == 0) {
+                $("#msg").after("<span class='err'>Please enter your message.</span>");
+                status = false;
+            }
+            else if (message.length < 5) {
+                $("#msg").after("<span class='err'>Please enter your full message.</span>");
+                status = false;
+            }
+            return status;
+
+
+        })
+    })
+</script>
+
+
+<section id="section-wrapper">
+    <div class="container">
+
+        <div class="box-wrapper">
+            <div class="row">
+                <div class="col-sm-3 firstdiv">
+                    <div class="firstdiv">
+                        <h2 class="info-title" style="font-size:35px;margin-top:10px"> Notification &  Update</h2>
+                        <p class="info-sub-title">Fill up the form and Send our Notification </p>
+                        <ul class="info-details">
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Phone:</span> <a href="tel:+ 1235 2355 98">+ 1235 2355 98</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Email:</span> <a href="mailto:egrampanchayat@gmail.com">info@yoursite.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-globe"></i>
+                                <span>Website:</span> <a href="#">egrampanchayat.com</a>
+                            </li>
+                        </ul>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-9 secnddiv">
+                    <div class="secnddiv">
+                        <form action="UpdateNotification" method="POST">
+                            <h2 class="form-title" style="font-size:35px;margin-top:9px;">Update Notification</h2>
+                            <h3 style="text-align:center; background-color:aqua">@ViewBag.Message</h3>
+
+                            <div class="form-fields">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="hidden" name="Nid" value="@Model.Nid" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <textarea id="msg" placeholder="Write your Notification" name="NMsg">@Model.NMsg</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="submit" value="Save Notification" id="submit-button">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@{
+    if (IsPost)
+    {
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+        </script>
+    }
+}
+
+

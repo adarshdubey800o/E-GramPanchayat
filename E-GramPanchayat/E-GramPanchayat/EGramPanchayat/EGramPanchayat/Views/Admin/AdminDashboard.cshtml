@@ -1,0 +1,258 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<style>
+    :root {
+        --main-bg-color: #009d63;
+        --main-text-color: #009d63;
+        --second-text-color: #bbbec5;
+        --second-bg-color: #c1efde;
+    }
+
+    .primary-text {
+        color: var(--main-text-color);
+    }
+
+    /*   .second-text {
+        color: var(--second-text-color);
+    }*/
+
+    .primary-bg {
+        background-color: var(--main-bg-color);
+    }
+
+    .secondary-bg {
+        background-color: var(--second-bg-color);
+    }
+
+    .rounded-full {
+        border-radius: 100%;
+    }
+
+    #wrapper {
+        overflow-x: hidden;
+        background-image: linear-gradient( to right, #baf3d7, #c2f5de, #cbf7e4, #d4f8ea, #ddfaef );
+    }
+
+    #sidebar-wrapper {
+        min-height: 100vh;
+        margin-left: -15rem;
+        -webkit-transition: margin 0.25s ease-out;
+        -moz-transition: margin 0.25s ease-out;
+        -o-transition: margin 0.25s ease-out;
+        transition: margin 0.25s ease-out;
+    }
+
+        #sidebar-wrapper .sidebar-heading {
+            padding: 0.875rem 1.25rem;
+            font-size: 1.2rem;
+        }
+
+        #sidebar-wrapper .list-group {
+            width: 15rem;
+        }
+
+    #page-content-wrapper {
+        min-width: 100vw;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+
+    #menu-toggle {
+        cursor: pointer;
+    }
+
+    .list-group-item {
+        border: none;
+        padding: 20px 30px;
+    }
+
+        .list-group-item.active {
+            background-color: transparent;
+            color: var(--main-text-color);
+            font-weight: bold;
+            border: none;
+        }
+
+    @@media (min-width: 768px) {
+        #sidebar-wrapper {
+            margin-left: 0;
+        }
+
+        #page-content-wrapper {
+            min-width: 0;
+            width: 100%;
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -15rem;
+        }
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+                <i class="fas fa-user-secret me-2"></i>E-Gram Panchayat
+            </div>
+            <div class="list-group list-group-flush my-3">
+                <a href="AdminDashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold ">
+                    <i class="fa-solid fa-house me-2"></i>Home Dashboard
+                </a>
+                <a href="AddServices" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>Add Service
+                </a>
+                <a href="ManageServices" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-brands fa-servicestack me-2"></i>Manage Service
+                </a>
+                <a href="ManageBeneficiary" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-regular fa-id-card me-2"></i>Manage Beneficiary
+                </a>
+                <a href="FeedbackManagement" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-regular fa-comment-dots me-2"></i>FeedBack Management
+                </a>
+                <a href="EnquiryManagement" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-regular fa-comment-dots me-2"></i>Enquiry Management
+                </a>
+                <a href="SendSMS" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-regular fa-comment-dots me-2"></i>Send Email
+                </a>
+                <a href="BeneficiaryDetails" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                    <i class="fa-regular fa-comment-dots me-2"></i> Beneficiary Details
+                </a>
+
+
+
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper" style="background-color:khaki">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                    <h2 class="fs-2 m-0">Admin Dashboard</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
+                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user me-2"></i>Settings
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             
+                                <li><a class="dropdown-item" href="ChangePassword">Change Password</a></li>
+                                <li><a class="dropdown-item" href="LogOut">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid px-4 ">
+                <div class="row g-3 my-2">
+                    <div class="col-md-4">
+                        <a href="AdminDashboard" style="text-decoration:none;">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" id="shadow" style="cursor: pointer; min-height: 200px ">
+                                <div>
+                                    <h3 class="fs-2">Admin Dashboard</h3>
+
+                                </div>
+                                <i class="fa-solid fa-house fs-1 primary-text border rounded-full secondary-bg p-3 active"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="AddServices" style="text-decoration:none">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" style="cursor:pointer;min-height:200px">
+                                <div>
+                                    <h3 class="fs-2">Add Service</h3>
+
+                                </div>
+                                <i class="fa-solid fa-magnifying-glass fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="ManageServices" style="text-decoration:none">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" style="cursor: pointer; min-height: 200px">
+                                <div>
+                                    <h3 class="fs-2">Manage Service</h3>
+
+                                </div>
+                                <i class="fa-brands fa-servicestack fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+                <div class="row g-3 my-2">
+                    <div class="col-md-4">
+                        <a href="FeedbackManagement" style="text-decoration:none">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" style="cursor: pointer; min-height: 200px">
+                                <div>
+                                    <h3 class="fs-2">Feedback Management</h3>
+
+                                </div>
+                                <i class="fa-regular fa-comment-dots  fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="ManageNotification" style="text-decoration:none">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" style="cursor: pointer; min-height: 200px">
+                                <div>
+                                    <h3 class="fs-2">Manage Notification</h3>
+
+                                </div>
+                                <i class="fa-solid fa-diagram-project fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="ManageBeneficiary" style="text-decoration:none">
+                            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded" style="cursor: pointer; min-height: 200px">
+                                <div>
+                                    <h3 class="fs-2">Manage Beneficiary</h3>
+
+                                </div>
+                                <i class="fa-regular fa-id-card fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /#page-content-wrapper -->
+<script>var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };</script>

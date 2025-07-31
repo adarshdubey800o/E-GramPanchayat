@@ -1,0 +1,197 @@
+﻿
+@{
+    ViewBag.Title = "StaffRegistration";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    .controls.form-control {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+
+
+    .err {
+        color: red;
+    }
+</style>
+
+
+<script>
+        $(document).ready(function () {
+            $("#BtnRegister").click(function () {
+                var name, rdbmale, rdbfemale, fname, email, mobileno, city, password, cpassword, address, state, status = true;
+                name = $("#Name").val().trim();
+                rdbmale = $("#fmale").prop('checked');
+                rdbfemale = $("#ffemale").prop('checked');
+                fname = $("#FatherName").val().trim();
+                email = $("#Email").val().trim();
+                mobileno = $("#Mobile").val().trim();
+                city = $("#City").val().trim();
+                password = $("#Password").val().trim();
+                cpassword = $("#CPassword").val().trim();
+                address = $("#Address").val().trim();
+                state = $("#State").val().trim();
+
+                $(".err").remove();
+
+                //validate name;
+                if (name.length == 0) {
+                    status = false;
+                    $("#Name").after("<span class='err'> Please enter name .</span>")
+                }
+                else if (name.length < 2) {
+                    status = false;
+                    $("#Name").after("<span class='err'>Please enter your valid name.</span>")
+                }
+                //validate gender
+                if (rdbmale == 0 && rdbfemale == 0) {
+                    $("#fmale").parent().after("<span class='err'>Please choose a gender.</span>");
+                    status = false;
+                }
+                //validate father Name..
+                if (fname.length == 0) {
+                    status = false;
+                    $("#FatherName").after("<span class='err'> Please enter name .</span>")
+                }
+                else if (fname.length < 2) {
+                    status = false;
+                    $("#FatherName").after("<span class='err'>Please enter your valid name.</span>")
+                }
+                //validate email;
+                if (email.length == 0) {
+                    status = false;
+                    $("#Email").after("<span class='err'>Please enter your valid email.</span>")
+                }
+                //validate mobileno;
+                if (mobileno.length == 0) {
+                    status = false;
+                    $("#Mobile").after("<span class='err'>Please enter your Mobile no.</span>")
+                }
+                else if (mobileno.length !== 10) {
+                    status = false;
+                    $("#Mobile").after("<span class='err'>Please enter 10 digit mobile no.</span>")
+                }
+                //validate City;
+                if (city.length == 0) {
+                    status = false;
+                    $("#City").after("<span class='err'>Please enter your City.</span>")
+                }
+                // validate a select State;
+                if (state.length == 0) {
+                    status = false;
+                    $("#State").after("<span class='err'>Please select a State</span>")
+                }
+                //validation Address
+                if (address.length == 0) {
+                    status = false;
+                    $("#Address").after("<span class='err'>Please a Address</span>")
+                }
+                // validate password;
+                if (password.length == 0) {
+                    status = false;
+                    $("#Password").after("<span class='err'>Please enter your password carefully.</span>")
+                }
+                //validate comform password;
+                if (cpassword.length == 0) {
+                    status = false;
+                    $("#CPassword").after("<span class='err'>It's ok Please enter your password.</span>")
+                }
+
+
+                return status;
+            });
+        });
+</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="container-fluid p-0">
+    <div class="row p-0" id="bg" style="background-image: url('../../Content/Images/gramP5.jpg');
+background-size: cover;">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="background-image: url('../../Content/Images/gramP4.jpg'); margin-top: 60px; padding-top: 20px; min-height: 600px; padding-bottom: 25px; margin-bottom: 60px; border-radius: 20px;">
+            <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                    <h2 class="text-center" style="color:#4c00ff;color:white;">Staff Registration</h2>
+                    <hr />
+                    <p id="presponse" class="bg-warning text-danger  text-center h4" style=" min-height:40px;width:100% ; padding:10px;display:none;">@ViewBag.Result</p>
+                    <form action="/Home/Decoration_Registration" method="post" enctype="multipart/form-data">
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="text" id="Name" name="Name" placeholder="Name" class="form-control" />
+                            </div>
+                            <div class="col-sm-6 my-3">
+                                <span class="form-control">
+                                    Gender &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Male" id="fmale" />Male
+                                    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   <input type="radio" name="Gender" id="ffemale" value="Female" />Female
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="text" id="FatherName" name="FatherName" placeholder="Father Name" class="form-control" />
+                            </div>
+                            <div class="col-sm-6 my-3">
+                                <input type="number" id="Mobile" name="MobileNo" placeholder="MobileNo" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="email" id="Email" name="EmailId" placeholder="Email-Id" class="form-control" />
+                            </div>
+
+                            <div class="col-sm-6 my-3">
+                                <select name="State" id="State" class="form-control">
+                                    <option value="">Select State</option>
+                                    <option>Utter Pradesh</option>
+                                    <option>Madhya Pradesh</option>
+                                    <option>Delhi</option>
+                                    <option>Rajsthan</option>
+                                    <option>Panjab</option>
+                                    <option>Odisha</option>
+                                    <option>Goa</option>
+                                    <option>Himanchal Pradesh</option>
+                                    <option></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="text" id="City" name="City" placeholder="City" class="form-control" />
+
+                            </div>
+                            <div class="col-sm-6 my-3">
+
+                                <input type="text" id="Address" name="Address" placeholder="Address" class="form-control" />
+
+                            </div>
+                        </div>
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="password" id="Password" name="Passs" placeholder="Password" class="form-control" />
+                            </div>
+
+
+                            <div class="col-sm-6 my-3">
+                                <input type="password" id="CPassword" name="ConfPass" placeholder=" Comfirm Password" class="form-control" />
+                            </div>
+                        </div>
+
+
+                        <div class="row controls">
+                            <div class="col-sm-6 my-3">
+                                <input type="submit" name="BtnRegister" id="BtnRegister" class="btn btn-success btn-block" value="Register Now" />
+                            </div>
+
+
+                            <div class="col-sm-6 my-3">
+                                <input type="reset" name="BtnReset" id="BtnReset" class="btn btn-danger btn-block" value="Reset Now" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

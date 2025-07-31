@@ -1,0 +1,808 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+@using EGramPanchayat.Models
+@model IEnumerable<Notification_Master>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        background: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'poppins',sans-serif;
+        overflow-x: hidden;
+    }
+    /*Corosol section start*/
+    /*Corosol section start*/
+
+    .carousel-item {
+        position: relative;
+    }
+
+        .carousel-item::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+    .carousel-caption {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+
+
+    .carousel-control-prev {
+        width: 90px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: var(--bs-info);
+        border-radius: 0 50px 50px 0;
+        opacity: 1;
+    }
+
+        .carousel-control-prev:hover {
+            background: var(--bs-secondary);
+            transition: .8s;
+        }
+
+    .carousel-control-next {
+        width: 90px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        background: var(--bs-info);
+        border-radius: 50px 0 0 50px;
+        opacity: 1;
+    }
+
+        .carousel-control-next:hover {
+            background: var(--bs-secondary);
+            transition: .8s;
+        }
+
+    .carousel-caption .carousel-content a button.carousel-content-btn1 {
+        background: var(--bs-secondary);
+        color: var(--bs-dark);
+        opacity: 1;
+        border: 0;
+        border-radius: 20px;
+    }
+
+        .carousel-caption .carousel-content a button.carousel-content-btn1:hover {
+            background: var(--bs-primary);
+            color: #ffffff;
+            border: 0;
+            opacity: 1;
+            transition: 1s;
+            border-radius: 20px;
+        }
+
+    .carousel-caption .carousel-content a button.carousel-content-btn2 {
+        background: var(--bs-primary);
+        color: var(--bs-white);
+        opacity: 1;
+        border: 0;
+        border-radius: 20px;
+    }
+
+        .carousel-caption .carousel-content a button.carousel-content-btn2:hover {
+            background: var(--bs-secondary);
+            color: var(--bs-dark);
+            border: 0;
+            opacity: 1;
+            transition: 1s;
+            border-radius: 20px;
+        }
+    /*Corosol section end*/
+
+    button {
+        --primary-color: #FDA12B;
+        --secondary-color: #fff;
+        --hover-color: #111;
+        --arrow-width: 10px;
+        --arrow-stroke: 2px;
+        box-sizing: border-box;
+        border: 0;
+        border-radius: 100px;
+        color: var(--secondary-color);
+        padding: 1em 1.8em;
+        margin-bottom: 1em;
+        background: var(--primary-color);
+        display: flex;
+        transition: 0.2s background;
+        align-items: center;
+        gap: 0.6em;
+        font-weight: bold;
+    }
+
+        button .arrow-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button .arrow {
+            margin-top: 1px;
+            width: var(--arrow-width);
+            background: var(--primary-color);
+            height: var(--arrow-stroke);
+            position: relative;
+            transition: 0.2s;
+        }
+
+            button .arrow::before {
+                content: "";
+                box-sizing: border-box;
+                position: absolute;
+                border: solid var(--secondary-color);
+                border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+                display: inline-block;
+                top: -3px;
+                right: 3px;
+                transition: 0.2s;
+                padding: 3px;
+                transform: rotate(-45deg);
+            }
+
+        button:hover {
+            background-color: var(--hover-color);
+        }
+
+            button:hover .arrow {
+                background: var(--secondary-color);
+            }
+
+                button:hover .arrow:before {
+                    right: 0;
+                }
+
+
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    /* Schme Card title*/
+    .card-section {
+        box-sizing: border-box;
+        width: 190px;
+        height: 220px;
+        background: rgba(217, 217, 217, 0.58);
+        border: 1px solid white;
+        box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(6px);
+        border-radius: 17px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.5s;
+        user-select: none;
+        font-weight: bolder;
+        color: black;
+        letter-spacing: 2;
+    }
+
+        .card-section:hover {
+            border: 1px solid black;
+            transform: scale(1.05);
+        }
+
+        .card-section:active {
+            transform: scale(0.95) rotateZ(1.7deg);
+        }
+
+    /*Scheme Card Title End*/
+    #Scheme-section1 {
+        background-color: #FBAB7E;
+        background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    }
+
+
+
+    .rainbow {
+        background-color: black;
+        font-family: 'Times New Roman';
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+
+    .galary-section:hover {
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    /*Image Galary Section*/
+
+    /*#photo-section{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+    }
+        #photo-section h5, a {
+            margin-left: 2rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+            background: #383b3a;
+            text-align:center;
+            border-radius:1.5rem;
+        }*/
+
+    #photo-section:hover {
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    /*Button section start*/
+
+    button {
+        padding: 12.5px 30px;
+        border: 0;
+        border-radius: 100px;
+        background-color: #2ba8fb;
+        color: #ffffff;
+        font-weight: Bold;
+        transition: all 0.5s;
+        text-align: center;
+        margin-top: 1rem;
+        -webkit-transition: all 0.5s;
+    }
+
+        button a {
+            text-decoration: none;
+        }
+
+        button:hover {
+            background-color: #FDA12B;
+            box-shadow: 0 0 10px #6fc5ff50;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            background-color: #3d94cf;
+            transition: all 0.25s;
+            -webkit-transition: all 0.25s;
+            box-shadow: none;
+            transform: scale(0.98);
+        }
+    /*Enquiry CSS*/
+    #btnenq {
+        position: fixed;
+        bottom: 450px;
+        offset-rotate: reverse;
+        right: 1px;
+        z-index: 9;
+        margin-right: 0px;
+    }
+
+    .err {
+        color: red;
+    }
+
+    .btn:hover {
+        color: black;
+        background-color: coral;
+        box-shadow: 10px;
+    }
+
+    .fts {
+        font-family: 'Times New Roman';
+    }
+</style>
+
+<!-- Carousel Start -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- Button trigger modal -->
+        <button type="button" id="btnenq" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <h5>Enquiry</h5>
+        </button>
+
+        <!-- Modal  Section Start-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="background-color:coral">
+                        <h3 class="modal-title fts" id="exampleModalLabel">Enquiry Form</h3>
+
+                        <h4 class="text-center">@ViewBag.Message</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" id="btnclose" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="background-color:antiquewhite">
+                        <form action="/" method="post">
+                            <input type="text" name="Name" placeholder="Name" class="form-control" id="tname" />
+                            <br />
+
+                            <input type="email" name="EmailId" placeholder="Email Id" class="form-control" id="temail" />
+                            <br />
+                            <input type="number" name="MobNo" placeholder="Mobile Number" class="form-control" id="tmobile" />
+                            <br />
+                            <input type="text" name="Topic" placeholder="Enter Topic" class="form-control" id="ttopic" />
+                            <br />
+                            <textarea name="Enquiry_Msg" class="form-control" placeholder="Subject" id="tmessage"></textarea>
+                            <br /><br />
+                            <div class="row text-center">
+                                <div class="col-sm-12">
+                                    <input type="button" value="Send Enquiry" class="btn btn-lg btn-success" id="btnsubmit" />
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Modal section End-->
+
+    </div>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Images/slider (2).jpg" class="d-block w-100 img-fluid" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/slider (1).jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Images/slider (2).jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Carousel End -->
+
+
+    <div class="row pe-5" style="min-height:70px; background-color: #ffbf00 ">
+        <marquee class="text-danger" onmouseover="stop()" onmouseout="start()">
+            <div class="col-sm-4 pt-3 " style="font-size:25px;margin-left:1rem;margin-top:-1rem">
+                @{
+                    foreach (Notification_Master n in Model)
+                    {
+                        <span style="margin-right:150px;"><img src="~/Content/Images/newimage.jpg" height="70" width="70" />@n.NMsg</span>
+                    }
+                }
+            </div>
+        </marquee>
+    </div>
+
+    <!--news section start-->
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row pt-5">
+                <div class="col-sm-4">
+                    <h2 class="text-6xl text-center">
+                        <strong class="rainbow">ABOUT PMOR</strong>
+                    </h2>
+                    <p style="word-spacing:2;line-height:2">
+                        <b>The Ministry of Panchayati Raj is a branch of the Government of India looking after the ongoing process of decentralisation and local governance in the States.</b>
+                        <br />
+                        <hr />
+                        In a federation the powers and functions of the government are divided among two governments. In India it is the Union Government and the various State Governments. However, with the passage of 73rd and 74th amendment act of the Constitution of India, in 1993 the division of powers and functions have been further trickled down to Local Self Governments (Panchayat at Village levels and Municipalities and Municipal Corporations in towns and large cities). As such India now has not two but three tier of Governments in its federal setup.
+                        <br />
+
+
+                        Ministry of Panchayati Raj looks into all matters relating to the Panchayati Raj and Panchayati Raj Institutions. It was created in 1993.
+                        <br />
+                        This is a community forum where members can ask.
+                    </p>
+                    <button>
+                        <a href="/General/Home" style="color:white">
+                            View More
+                        </a>
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="text-6xl text-center">
+                        <strong class="rainbow">Whats New</strong>
+                    </h2>
+                    <ul>
+                        <li>
+                            Extension of Date for Submission of Concept Notes for customized Video Conferencing Solution for Ministry of Panchayati Raj
+                        </li>
+                        <li>
+                            ‘One District One Product’ (ODOP) on Government e-Marketplace (GeM)
+
+                        </li>
+                        <li>
+                            Notice for Customized Video Conferencing Solutions for Ministry of Panchayati Raj
+
+                        </li>
+                        <li>
+                            Guideline of the Internship program of the MoPR
+
+
+                        </li>
+                        <li>
+                            ‘हिंदी दिवस’ के अवसर पर माननीय पंचायती राज राज्य मंत्री की अपील
+                            ‘हिंदी दिवस’ के अवसर पर सचिव, पंचायती राज महोदय की अपील
+                            ‘हिंदी दिवस’ के अवसर पर माननीय पंचायती राज मंत्री की अपील
+                        </li>
+                        <li>
+                            DO Letter from Secretary MoPR regarding PDI implementation framework
+                        </li>
+                        <li>
+                            DO Letter from Secretary MoPR regarding PDI implementation framework
+                        </li>
+                        <li>
+                            Joint advisory on role of GP in Jal Jeevan Mission (JJM)
+
+                        </li>
+                        <li>
+                            Joint advisory on role of GP in Jal Jeevan Mission (JJM)
+                            Joint Advisory on Swachh Bharat Mission-Grameen (SBM-G) Phase II
+                        </li>
+
+                    </ul>
+                    <button>
+                        <a href="/General/Home" style="color:white">
+                            View More
+                        </a>
+                        <div class="arrow-wrapper">
+                            <div class="arrow"></div>
+
+                        </div>
+                    </button>
+                </div>
+                <div class="col-sm-4 mt-4">
+                    <div class="card">
+                        <img src="~/Content/Images/yogiji.jpg" class="card-img-top" alt="..." height="200vh" width="100px" style="border-radius:60%;">
+                        <div class="card-body">
+                            <h5 class="text-center">Yogi Aditya Nath</h5>
+
+
+                            <h6 class="text-center"><b> Hon'ble Chief Minister of Uttar Pradesh</b></h6>
+                            <span><b>Date of Birth</b>:&emsp;5 June,1972</span>
+                            <p><b>Religion Hindu</b>:&emsp;Hindu</p>
+                            <p class="card-text">
+                                <b>Place of birth</b> :&emsp; Panchur Garwal(Utrakhannd)
+                            </p>
+                            <p><b>Address</b> :&emsp;5, Kalidas Marg, Lucknow, Uttar Pradesh</p>
+                            <p>
+                                <b>Occupation/Profession</b>:&emsp;Religious Missionary, Social Worker
+
+                            </p>
+
+                            </p>
+
+                            <p class="d-inline-flex gap-1">
+                                <a data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="text-decoration:none">
+                                    <button>
+                                        Profile
+                                    </button>
+                                </a>
+
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                Yogi Adityanath (born Ajay Mohan Singh Bisht; 5 June 1972)[6][1][7][a][9] is an Indian Hindu monk and politician from the Bharatiya Janata Party who is serving as the 21st and current Chief Minister of Uttar Pradesh since 19 March 2017. He is the longest serving Chief Minister of Uttar Pradesh, who is currently.
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<!--News Section end-->
+<!--Scheme section start-->
+<h1 class="text-6xl text-center pt-4 pb-4">
+    <strong class="rainbow">Schemes/Initiatives</strong>
+</h1>
+<div class="row" id="Scheme-section1" style="display:flex;justify-content:center;align-items:center;">
+
+
+    <div class="col-sm-1 mt-2"></div>
+
+    <div class="col-sm-4 col-md-2 mt-2 pt-4">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">eGramSwaraj</h4>
+            <p style="padding-left:0.5rem;padding-right:0.5rem;">Aims to bring transparency in decentralised planning To strengthen Panchayati  </p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 pt-4">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">AuditOnline</h4>
+            <p>facilitates internal & external audit planning.AuditOnline is one of the generic </p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 pt-4">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">ServicePlus</h4>
+            <p class="text-center" style="padding-left:0.5rem;padding-right:0.5rem;">e-Service delivery framework for delivering e-services to citizens.....</p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 pt-4">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">GPDP</h4>
+            <p>Preparation of PDP for economic development and social justice</p>
+        </div>
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+
+
+
+<div class="row pt-2" id="Scheme-section1" style="display:flex;justify-content:center;align-items:center;">
+
+    <div class="col-sm-1 mt-2"></div>
+
+    <div class="col-sm-4 col-md-2 mt-2 mb-3">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">TMP</h4>
+            <p>TMP Worldwide leads talent marketing through personalized employer.</p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 mb-3">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">PANCHAYAT</h4>
+            <p style="padding-left:0.5rem;padding-right:0.5rem;">Outstanding performers among Panchayats all over PANCHAYAT</p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 mb-3">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">SWAMITYWA</h4>
+            <p>Survey of Villages Abadi and Mapping with Improvised Technology....</p>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-2 mt-2 mb-3">
+        <div class="card card-section" style="width:100%;height:100%">
+            <h4 class="pt-4">SPECIAL PLANING</h4>
+            <p style="padding-left:0.5rem;padding-right:0.5rem;">A common Master Plan framework for the States/ Panchayats..</p>
+        </div>
+    </div>
+
+    <div class="col-sm-1"></div>
+</div>
+<div class="row pt-4">
+    <p class="text-center" style="font-size: 40px; font-family: 'Times New Roman', Times, serif;">E-GRAM PANCHAYAT</p>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5" style="height: 600px; border: 20px solid white; background-image: url('/Content/Images/img21.jpg');">
+        <div class="col-sm-12" style="height: 200px;"></div><br>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-12 bg-light" style="height: 320px;">
+            <br />
+            <p class="text-center" style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">
+                सबका साथ सबका विकास
+            </p>
+            <p class="text-center">
+                The central government has decided to launch the People's Plan Campaign, also known as “Sabki Yojana Sabka Vikas” from September 2019.
+
+                It aims to draw up Gram Panchayat Development Plans (GPDPs) in the country and place them on a website where anyone can see the status of the various government’s flagship schemes.
+            </p>
+
+            <center><a href="/General/Services" class="btn btn-primary">Services</a></center>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="col-sm-5" style="height: 600px; border: 20px solid white; background-image: url('/Content/Images/schl1.jpg');">
+        <div class="col-sm-12" style="height: 200px;"></div><br>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-12 bg-light" style="height: 320px;">
+            <br />
+            <p class="text-center" style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">
+                Gram Panchayat Development Plans
+            </p>
+            <p class="text-center">
+                The campaign aimed to help Gram Panchayats (GPs) in preparation of convergent and holistic GPDP through identification of sectoral infrastructural gaps in respective areas. The approval of GPDP for the year 2021-22, well in advance, will provide GPs full year for implementation and effective monitoring of works. The States will, thus, be in full readiness.
+            </p>
+
+            <center><a href="/General/Services" class="btn btn-primary">Services</a></center>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+<!--Cheme section End-->
+<!--Photo Galary section Start-->
+<div class="row pt-3" style="margin-left: 2rem; padding-top: 1rem;">
+    <h1 class="text-6xl text-center pt-3">
+        <strong class="rainbow">Image Galary</strong>
+    </h1>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2" id="photo-section">
+        <img src="~/Content/Images/svg (1).jpg" height="100%" width="100%" />
+    </div>
+    <div class="col-sm-2" id="photo-section">
+        <img src="~/Content/Images/svg (6).jpg" height="100%" width="100%" />
+    </div>
+    <div class="col-sm-2" id="photo-section">
+        <img src="~/Content/Images/svg (3).jpg" height="100%" width="100%" />
+    </div>
+    <div class="col-sm-2" id="photo-section">
+        <img src="~/Content/Images/svg (4).jpg" height="100%" width="100%" />
+    </div>
+    <div class="col-sm-2"></div>
+    <!--Photo Galary section End-->
+</div>
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2">
+        <button>
+            <a href="/General/ImageGalary" style="color:brown">View More</a>
+        </button>
+    </div>
+    <div class="col-sm-5"></div>
+</div>
+@*//To save Enquiry using Ajax*@
+<script>
+    $(document).ready(function () {
+        $("#btnsubmit").click(function () {
+            //debugger;
+            var name, email, mob, topic, subject;
+            name = $("#tname").val();
+            email = $("#temail").val();
+            mob = $("#tmobile").val();
+            topic = $("#ttopic").val();
+            subject = $("#tmessage").val();
+            var obj = { Name: name, EmailId: email, MobNo: mob, Topic: topic, Enquiry_Msg: subject }
+            $.getJSON('/General/SaveEnquiry', obj, function (result) {
+                if (result == "SUCCESS") {
+                    alert("Enquiry save successfully");
+                    $("#btnclose").trigger("click");
+                    $("#tname").val(" ");
+                    $("#temail").val(" ");
+                    $("#tmobile").val("");
+                    $("#ttopic").val(" ");
+                    $("#tmessage").val(" ");
+                }
+                else {
+                    alert("Sorry! your enquiry is not saved");
+                }
+
+            })
+        })
+    })
+</script>
+<script>
+    $(document).ready(function () {
+
+        $("#btnsubmit").click(function () {
+            var status = true;
+            if (status == false) {
+                $("#exampleModal").focus();
+                $("#exampleModal").Open().Modal;
+            }
+            //validation starts
+            var name, topic, email, address, mobile, message;
+            //to read values of all form controls
+            name = $("#tname").val().trim();
+            topic = $("#ttopic").val().trim();
+            mobile = $("#tmobile").val().trim();
+            email = $("#temail").val().trim();
+            /*address = $("#taddress").val().trim();*/
+            message = $("#tmessage").val().trim();
+            $(".err").remove();
+
+            // validate name
+            if (name.length == 0) {
+                $("#tname").after("<span class='err'>Please enter your name.</span>");
+                status = false;
+            }
+            else if (name.length < 3) {
+                $("#tname").after("<span class='err'>Please enter your full name.</span>");
+                status = false;
+            }
+            // validate topic
+            if (topic.length == 0) {
+                $("#ttopic").after("<span class='err'>Please enter your topic.</span>");
+                status = false;
+            }
+            else if (topic.length < 3) {
+                $("#ttopic").after("<span class='err'>Please enter your complete topic name.</span>");
+                status = false;
+            }
+            // validate email
+            if (email.length == 0) {
+                $("#temail").after("<span class='err'> Enter your email id.</span>");
+                status = false;
+            }
+            else if (IsEmail(email) == false) {
+                $("#temail").after("<span class='err'> invalid your email id.</span>");
+                status = false;
+            }
+            function IsEmail(email) {
+                var regex = /^([a-zA-Z0-9_\.\-\+])+\@@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!regex.test(email)) {
+                    $("#temail").after("<span class='err'> invalid your email id.</span>");
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            //validate mobile number
+            var regex = /^(0|91)?[6-9][0-9]{9}$/;
+            if (mobile.length == 0) {
+                $("#tmobile").after("<span class='err'>Please Enter your mobile number.</span>");
+                status = false;
+            }
+            else if (regex.test(mobile) == false)   //test ka useuper ke regex ko match krne ke liye
+            {
+                $("#tmobile").after("<span class='err'>Invalid mobile number.</span>");
+                status = false;
+            }
+            ////validate address
+
+            //if (address.length == 0) {
+            //    $("#taddress").after("<span class='err'>Please Enter your address.</span>");
+            //    status = false;
+            //}
+            //else {
+            //    var count = 1;
+            //    for (x = 0; x < address.length; x++) {
+            //        ch = address.charAt(x);
+            //        if (ch == ' ' || ch == ',')
+            //            count++;
+            //    }
+            //    if (count < 2) {
+            //        $("#taddress").after("<span class='err'>Please enter your complete address.</span>");
+            //        status = false;``
+            //    }
+            //}
+            //validate message
+            if (message.length == 0) {
+                $("#tmessage").after("<span class='err'>Please enter your message.</span>");
+                status = false;
+            }
+            else {
+                var count = 1;
+                for (x = 0; x < message.length; x++) {
+                    var ch = message.charAt(x);
+                    if (ch == " " || ch == "." || ch == "," || ch == "!")
+                        count++;
+                }
+                if (count < 3) {
+                    $("#tmessage").after("<span class='err'>please enter your complete message.</span>");
+                    status = false;
+                }
+            }
+
+            return status;
+        });
+    });
+</script>

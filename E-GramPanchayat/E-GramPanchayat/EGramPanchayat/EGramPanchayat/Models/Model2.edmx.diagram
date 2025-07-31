@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="834040183b94433e87cb7d27a6c0a26e" Name="Diagram1">
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Apply_Master" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.BeneficiaryMaster" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Block_Master" Width="1.5" PointX="5.25" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.City_Master" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Enquiry_Master" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Feedback_Master" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Login_Master" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Notification_Master" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.Service_Master" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Panchyat_DBModel1.State_Master" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="Panchyat_DBModel1.FK_BeneficiaryMaster_City_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="Panchyat_DBModel1.FK_BeneficiaryMaster_State_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="Panchyat_DBModel1.FK_Block_Master_City_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="Panchyat_DBModel1.FK_City_Master_City_Master" ManuallyRouted="false" />
+        <AssociationConnector Association="Panchyat_DBModel1.FK_City_Master_State_Master" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "ManageServices";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model  IEnumerable<Service_Master>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3 class="text-center" id="msgs">@TempData["msg"]</h3>
+            <table class="table table-hover table-warning table-striped">
+                <thead>
+                    <tr class="table-primary">
+                        <th>SNo.</th>
+                        <th>Services</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Upload Date</th>
+                        <th colspan="2" class="text-center">Delete Services</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Service_Master m in Model)
+                        {
+                            <tr>
+                                <td>@m.Id</td>
+                                <td>@m.Services</td>
+                                <td>@m.Title</td>
+                                <td>@m.Description</td>
+                                <td>@m.Service_DT</td> 
+                                <td>@Html.ActionLink("Delete", "DeleteServices", new { id = m.Id }, new { @class = "btn btn-block btn-danger" })</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $('.btn').click(function () {
+            debugger;
+            $("#msgs").delay(5000).slideUp(3000);  
+        });
+    });
+</script>
+
+
+
+

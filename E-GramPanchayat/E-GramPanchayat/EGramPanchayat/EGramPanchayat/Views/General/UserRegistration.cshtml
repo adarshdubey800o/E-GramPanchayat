@@ -1,0 +1,330 @@
+﻿
+@{
+    ViewBag.Title = "UserRegistration";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+@using EGramPanchayat.Models
+@model IEnumerable<SelectListItem>
+
+<style>
+    .controls.form-control {
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+    .err {
+        color: red;
+    }
+    #img {
+        background-image: radial-gradient(#f7da34ff,white,#f7da34ff);
+        background-size: cover;
+    }
+</style>
+   
+
+    <script>
+        $(document).ready(function () {
+            $("#BtnRegister").click(function () {
+                var name, rdbmale, rdbfemale, fname, email, mobileno,pincode,adharno, city,block,village,img,aimg, password, cpassword, address, state, status = true;
+                name = $("#Name").val().trim();
+                rdbmale = $("#fmale").prop('checked');
+                rdbfemale = $("#ffemale").prop('checked');
+                block = $("#Block").val().trim();
+                fname = $("#FatherName").val().trim();
+                email = $("#Email").val().trim();
+                mobileno = $("#Mobile").val().trim();
+                pincode = $("#PinCode").val().trim();
+                city = $("#City").val().trim();
+                password = $("#Password").val().trim();
+                cpassword = $("#CPassword").val().trim();
+                address = $("#Address").val().trim();
+                img = $("#image").val().trim();
+                state = $("#State").val().trim();
+                village = $("#Village").val().trim();
+                adharno = $("#AdharNo").val().trim();
+                aimg = $("#Aimage").val().trim();
+
+                $(".err").remove();
+
+                //validate name;
+                if (name.length == 0) {
+                    status = false;
+                    $("#Name").after("<span class='err'> Please enter name .</span>")
+                }
+                else if (name.length < 2) {
+                    status = false;
+                    $("#Name").after("<span class='err'>Please enter your valid name.</span>")
+                }
+                else if (!/^[A-Za-z\s\-]+$/.test(name)) {
+                    status = false;
+                    $("#Name").after("<span class='err'>Please enter a valid name without numbers or special characters.</span>");
+                }
+                else if (name.length < 2) {
+                    status = false;
+                    $("#Name").after("<span class='err'>Please enter your valid name.</span>")
+                }
+                //validate gender
+                if (rdbmale == 0 && rdbfemale == 0) {
+                    $("#fmale").parent().after("<span class='err'>Please choose a gender.</span>");
+                    status = false;
+                }
+                //validate father Name..
+                if (fname.length == 0) {
+                    status = false;
+                    $("#FatherName").after("<span class='err'> Please enter name .</span>")
+                }
+                else if (fname.length < 2) {
+                    status = false;
+                    $("#FatherName").after("<span class='err'>Please enter your valid name.</span>")
+                }
+                else if (!/^[A-Za-z\s\-]+$/.test(fname)) {
+                    status = false;
+                    $("#FatherName").after("<span class='err'>Please enter a valid name without numbers or special characters.</span>");
+                }
+                //validate email;
+                if (email.length == 0) {
+                    status = false;
+                    $("#Email").after("<span class='err'>Please enter your valid email.</span>")
+                }
+                //validate mobileno;
+                if (mobileno.length == 0) {
+                    status = false;
+                    $("#Mobile").after("<span class='err'>Please enter your Mobile no.</span>")
+                }
+                else if (mobileno.length !== 10) {
+                    status = false;
+                    $("#Mobile").after("<span class='err'>Please enter 10 digit mobile no.</span>")
+                }
+                //validate AdharNo;
+                if (adharno.length == 0) {
+                    status = false;
+                    $("#AdharNo").after("<span class='err'>Please enter your Adhar no.</span>")
+                }
+                else if (adharno.length !== 12) {
+                    status = false;
+                    $("#AdharNo").after("<span class='err'>Please enter 12 digit Adhar no.</span>")
+                }
+                //validate PinCode;
+                if (pincode.length == 0) {
+                    status = false;
+                    $("#PinCode").after("<span class='err'>Please enter your PinCode no.</span>")
+                }
+                else if (pincode.length !== 6) {
+                    status = false;
+                    $("#PinCode").after("<span class='err'>Please enter 6 digit PinCode no.</span>")
+                }
+                //validate City;
+                if (city.length == 0) {
+                    status = false;
+                    $("#City").after("<span class='err'>Please enter your City.</span>")
+                }
+                // validate a select State;
+                if (state.length == 0) {
+                    status = false;
+                    $("#State").after("<span class='err'>Please select a State</span>")
+                }
+                // validate a select Block;
+                if (block.length == 0) {
+                    status = false;
+                    $("#Block").after("<span class='err'>Please select a Block</span>")
+                }
+                // validate a village;
+                if (village.length == 0) {
+                    status = false;
+                    $("#Village").after("<span class='err'>Please enter a village</span>")
+                }
+                //validation Address
+                if (address.length == 0) {
+                    status = false;
+                    $("#Address").after("<span class='err'>Please a Address</span>")
+                }
+                // validate password;
+                if (password.length == 0) {
+                    status = false;
+                    $("#Password").after("<span class='err'>Please enter your password carefully.</span>")
+                }
+                else if (password.length < 6) {
+                    status = false;
+                    $("#Password").after("<span class='err'>Please enter 6 digitt password carefully.</span>")
+                }
+                //validate comform password;
+                if (cpassword.length == 0) {
+                    status = false;
+                    $("#CPassword").after("<span class='err'>It's ok Please enter your password.</span>")
+                }
+                else if (cpassword !== password) {
+                    status = false;
+                    $("#CPassword").after("<span class='err'>Please enter same password.</span>")
+                }
+                // validate image
+                //if (img.length == 0) {
+                //    status = false;
+                //    $("#image").after("<span class='err'>please choose a picture.</span>")
+                //}
+                // validate Adhar image
+                if (aimg.length == 0) {
+                    status = false;
+                    $("#Aimage").after("<span class='err'>please choose a picture.</span>")
+                }
+
+                return status;
+            });
+            // To get new captcha Code from server using JQuery AJAX
+            $(document).ready(function () {
+                $("#ImgReferesh").click(function () {
+                    $.ajax({
+                        url: '/General/GetNewCode',
+                        dataType: 'json',
+                        type: 'GET',
+                        success: function (res) {
+                            $("#ImgCaptcha").attr("src", "/Content/Captcha/" + res);
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <div class="container-fluid">
+        <div class="row" id="img" >
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" style="background-image: url('../../Content/Images/gramP4.jpg'); margin-top: 60px; padding-top: 20px; min-height: 600px; padding-bottom: 25px; margin-bottom: 60px; border-radius: 20px;">
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <h2 class="text-center" style="color:#4c00ff;color:white;">Beneficiary Registration</h2>
+                        <hr />
+                        <p id="presponse" class="bg-white text-danger  text-center h4" style=" min-height:40px;width:100% ; padding:10px;display:none;">@ViewBag.Result</p>
+                        <form action="/General/UserRegistration" method="post" enctype="multipart/form-data">
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <input type="text" id="Name" name="Name" placeholder="Name" class="form-control" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <span class="form-control">
+                                        Gender: &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<input type="radio" name="Gender" value="Male" id="fmale" />Male
+                                        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   <input type="radio" name="Gender" id="ffemale" value="Female" />Female
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <input type="text" id="FatherName" name="FatherName" placeholder="Father Name" class="form-control" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <input type="number" id="Mobile" name="MobileNo" placeholder="MobileNo" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <input type="email" id="Email" name="EmailId" placeholder="Email-Id" class="form-control" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <input type="number" id="AdharNo" name="AdharNo" placeholder="Adhar No" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    @Html.DropDownList("RelatedStateId", ViewData["StateName"] as IEnumerable<SelectListItem>, "--Select State--", new { @class = "form-control", id = "State" })
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <select name="RelatedCityId" id="City" class="form-control">
+                                        <option value="">--Select City--</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <select name="RelatedBlockId" id="Block" class="form-control">
+                                        <option value="">--Select Block--</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <input type="text" id="Village" name="VillageName" placeholder="Village Name" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <textarea rows="1" id="Address" class="form-control" name="Address" placeholder="Address"></textarea>
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <input type="number" id="PinCode" name="PinCode" placeholder="Pin Code" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <span style="color:black">Upload Your Picture:</span>
+                                    <input type="file" id="image" name="UserImg" placeholder="Choose Picture" class="form-control" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <span style="color:black">Adhar Picture:</span>
+                                    <input type="file" id="Aimage" name="AdharImg" placeholder="Choose Picture" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <input type="password" id="Password" name="Passs" placeholder="Password" class="form-control" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <input type="password" id="CPassword" name="ConfPass" placeholder=" Comfirm Password" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <span>Captcha Code</span>
+                                    <img id="ImgCaptcha" src="~/Content/Captcha/@ViewBag.CaptchaImg" width="150" height="40" />
+                                    <img id="ImgReferesh" src="~/Content/Images/refresh.png" width="30" height="30" title="Referesh Code" style="cursor:pointer" />
+                                </div>
+                                <div class="col-sm-6 my-3">
+                                    <span>Enter above soon captcha code</span>
+                                    <input type="text" id="tcaptcha" name="CaptchaCode" placeholder="Captcha Code" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="row controls">
+                                <div class="col-sm-6 my-3">
+                                    <input type="submit" name="BtnRegister" id="BtnRegister" class="btn btn-success btn-block" value="Register Now" />
+                                </div>
+
+
+                                <div class="col-sm-6 my-3">
+                                    <input type="reset" name="BtnReset" id="BtnReset" class="btn btn-danger btn-block" value="Reset Now" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            // To bind state
+            $("#State").change(function () {
+                var SId = $(this).val();
+                var obj = { StateId: SId }
+                $.getJSON("/General/getCity", obj, function (data) {
+                    var items = "<option value=''>Select City</option>"
+                    $.each(data, function (key, keyv) {
+
+                        items = items + "<option value=" + keyv.CityId + ">" + keyv.CityName + "</option>"
+                    })
+                    $("#City").html(items);
+                })
+            })
+            //To bind city on change of state
+            $("#City").change(function () {
+                var ct = $(this).val();
+                var objst = { CityId: ct }
+                $.getJSON("/General/getBlock", objst, function (data) {
+                    var citems = "<option value=''>Select Block</option>"
+                    $.each(data, function (ck, vk) {
+                        citems = citems + "<option value=" + vk.BlockId + ">" + vk.BlockName + "</option>"
+                    })
+                    $("#Block").html(citems);
+                })
+            })
+        })
+    </script>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Panchyat_DBModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Apply_Master">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Apply_DT" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BeneficiaryMaster">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FatherName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AdharNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RelatedStateId" Type="Int32" />
+    <Property Name="RelatedCityId" Type="Int32" />
+    <Property Name="RelatedBlockId" Type="Int32" />
+    <Property Name="VillageName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PinCode" Type="Int32" />
+    <Property Name="BeneficiaryPicName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AdharPicName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RegDT" Type="DateTime" Precision="3" />
+    <Property Name="IsDel" Type="Boolean" />
+    <NavigationProperty Name="City_Master" Relationship="Self.FK_BeneficiaryMaster_City_Master" FromRole="BeneficiaryMaster" ToRole="City_Master" />
+    <NavigationProperty Name="State_Master" Relationship="Self.FK_BeneficiaryMaster_State_Master" FromRole="BeneficiaryMaster" ToRole="State_Master" />
+  </EntityType>
+  <EntityType Name="Block_Master">
+    <Key>
+      <PropertyRef Name="BlockId" />
+    </Key>
+    <Property Name="BlockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlockName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City_Master" Relationship="Self.FK_Block_Master_City_Master" FromRole="Block_Master" ToRole="City_Master" />
+  </EntityType>
+  <EntityType Name="City_Master">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <NavigationProperty Name="BeneficiaryMasters" Relationship="Self.FK_BeneficiaryMaster_City_Master" FromRole="City_Master" ToRole="BeneficiaryMaster" />
+    <NavigationProperty Name="Block_Master" Relationship="Self.FK_Block_Master_City_Master" FromRole="City_Master" ToRole="Block_Master" />
+    <NavigationProperty Name="City_Master1" Relationship="Self.FK_City_Master_City_Master" FromRole="City_Master" ToRole="City_Master1" />
+    <NavigationProperty Name="City_Master2" Relationship="Self.FK_City_Master_City_Master" FromRole="City_Master1" ToRole="City_Master" />
+    <NavigationProperty Name="State_Master" Relationship="Self.FK_City_Master_State_Master" FromRole="City_Master" ToRole="State_Master" />
+  </EntityType>
+  <EntityType Name="Enquiry_Master">
+    <Key>
+      <PropertyRef Name="EnquiryId" />
+    </Key>
+    <Property Name="EnquiryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MobNo" Type="Int64" />
+    <Property Name="Topic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Enquiry_Msg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Enquiry_dt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Feedback_Master">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeedbackTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Feedback_DT" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Login_Master">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Pass" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="LCount" Type="Int32" />
+    <Property Name="LastLogin_dt" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Notification_Master">
+    <Key>
+      <PropertyRef Name="Nid" />
+    </Key>
+    <Property Name="Nid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NMsg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NDT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Service_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Services" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Service_DT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IsDel" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BeneficiaryMasters" Relationship="Self.FK_BeneficiaryMaster_State_Master" FromRole="State_Master" ToRole="BeneficiaryMaster" />
+    <NavigationProperty Name="City_Master" Relationship="Self.FK_City_Master_State_Master" FromRole="State_Master" ToRole="City_Master" />
+  </EntityType>
+  <Association Name="FK_BeneficiaryMaster_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="0..1" />
+    <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="BeneficiaryMaster">
+        <PropertyRef Name="RelatedCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeneficiaryMaster_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="BeneficiaryMaster">
+        <PropertyRef Name="RelatedStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Block_Master_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+    <End Role="Block_Master" Type="Self.Block_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Block_Master">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Master_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+    <End Role="City_Master1" Type="Self.City_Master" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="City_Master1">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Master_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City_Master">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Panchyat_DBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Apply_Master" EntityType="Self.Apply_Master" />
+    <EntitySet Name="BeneficiaryMasters" EntityType="Self.BeneficiaryMaster" />
+    <EntitySet Name="Block_Master" EntityType="Self.Block_Master" />
+    <EntitySet Name="City_Master" EntityType="Self.City_Master" />
+    <EntitySet Name="Enquiry_Master" EntityType="Self.Enquiry_Master" />
+    <EntitySet Name="Feedback_Master" EntityType="Self.Feedback_Master" />
+    <EntitySet Name="Login_Master" EntityType="Self.Login_Master" />
+    <EntitySet Name="Notification_Master" EntityType="Self.Notification_Master" />
+    <EntitySet Name="Service_Master" EntityType="Self.Service_Master" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" />
+    <AssociationSet Name="FK_BeneficiaryMaster_City_Master" Association="Self.FK_BeneficiaryMaster_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeneficiaryMaster_State_Master" Association="Self.FK_BeneficiaryMaster_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Block_Master_City_Master" Association="Self.FK_Block_Master_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="Block_Master" EntitySet="Block_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Master_City_Master" Association="Self.FK_City_Master_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="City_Master1" EntitySet="City_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Master_State_Master" Association="Self.FK_City_Master_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="City_Master" EntitySet="City_Master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

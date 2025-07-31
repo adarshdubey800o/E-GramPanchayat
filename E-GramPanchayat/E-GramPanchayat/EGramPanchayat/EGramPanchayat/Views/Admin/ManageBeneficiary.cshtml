@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "ManageBeneficiary";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model IEnumerable<BeneficiaryMaster>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-bordered table table-striped table-warning">
+                <thead>
+                    <tr class="table-success" align="center">
+                        <th>Sno.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Father Name</th>
+                        <th scope="col">Mobile No</th>
+                        <th scope="col">Email Id</th>
+                        <th scope="col">Adhar No</th>
+                        <th scope="col">State</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Block</th>
+                        <th scope="col">Village</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Pincode</th>
+                        <th scope="col">Beneficiary Pic</th>
+                        <th scope="col">Adhar Pic</th>
+                        <th scope="col">Reg_DT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var sno = 1;
+                        foreach (BeneficiaryMaster b in Model)
+                        {
+                            <tr>
+                                <td>@b.</td>
+                                <td>@b.Name</td>
+                                <td>@b.Gender</td>
+                                <td>@b.FatherName</td>
+                                <td>@b.MobileNo</td>
+                                <td>@b.EmailId</td>
+                                <td>@b.AdharNo</td>
+                                <td>@b.RelatedStateId</td>
+                                <td>@b.RelatedCityId</td>
+                                <td>@b.RelatedBlockId</td>
+                                <td>@b.VillageName</td>
+                                <td>@b.Address</td>
+                                <td>@b.PinCode</td>
+                                <td><img src="~/Content/BeneficiaryPic/@b.BeneficiaryPicName" height="50" width="50" /></td>
+                                <td><img src="~/Content/AdharPic/@b.AdharPicName" height="50" width="50" /></td>
+                                <td>@b.RegDT</td>
+                            </tr>
+                            sno++;
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

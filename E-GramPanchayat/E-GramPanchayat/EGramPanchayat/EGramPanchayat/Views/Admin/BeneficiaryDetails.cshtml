@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "BeneficiaryDetails";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model IEnumerable<Apply_Master>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-bordered table table-striped">
+                <thead>
+                    <tr class="table-primary" align="center">
+                        <th scope="col">Applicant ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">EmailID</th>
+                        <th scope="col">Mobile No</th>
+                        <th scope="col">Services</th>
+
+                        <th scope="col">Apply Date</th>
+                        @*<th scope="col" colspan="2">Manage</th>*@
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Apply_Master e in Model)
+                        {
+                            <tr>
+
+                                <td>@e.AId</td>
+                                <td>@e.Name</td>
+                                <td>@e.Email</td>
+                                <td>@e.MobileNo</td>
+                                <td>@e.Services</td>
+
+                                <td>@e.Apply_DT</td>
+                                @*<td>@Html.ActionLink("Update", "UpdateServices", new { mid = e.AId }, new { @class = "btn btn-block btn-primary" })</td>
+                                    <td>@Html.ActionLink("Delete", "DeleteServices", new { mid = e.AId }, new { @class = "btn btn-block btn-danger" })</td>*@
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+

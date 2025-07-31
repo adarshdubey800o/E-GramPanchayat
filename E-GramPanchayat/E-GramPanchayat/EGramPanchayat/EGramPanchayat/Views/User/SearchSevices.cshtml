@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "SearchSevices";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+@using EGramPanchayat.Models
+@model  IEnumerable<Service_Master>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table table-striped">
+                <thead>
+                    <tr class="table-info">
+                        <th>SNo.</th>
+                        <th>Services</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Upload Date</th>
+                        <th colspan="2" class="text-center">For Apply Click Here</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (Service_Master m in Model)
+                        {
+                            <tr>
+                                <td>@m.Id</td>
+                                <td>@m.Services</td>
+                                <td>@m.Title</td>
+                                <td>@m.Description</td>
+                                <td>@m.Service_DT</td>
+                                <td>
+
+                                    <center>
+                                        @Html.ActionLink("Apply", "ApplySevices", new { services = m.Services })
+                                    </center>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

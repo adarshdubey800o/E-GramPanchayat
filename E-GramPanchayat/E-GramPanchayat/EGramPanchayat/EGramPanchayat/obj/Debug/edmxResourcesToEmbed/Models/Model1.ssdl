@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Panchyat_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Apply_Master">
+    <Key>
+      <PropertyRef Name="AId" />
+    </Key>
+    <Property Name="AId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="200" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="20" />
+    <Property Name="Services" Type="varchar" MaxLength="100" />
+    <Property Name="Apply_DT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="BeneficiaryMaster">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="Name" Type="varchar" MaxLength="70" />
+    <Property Name="Gender" Type="varchar" MaxLength="12" />
+    <Property Name="FatherName" Type="varchar" MaxLength="70" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="20" />
+    <Property Name="EmailId" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="AdharNo" Type="varchar" MaxLength="20" />
+    <Property Name="RelatedStateId" Type="int" />
+    <Property Name="RelatedCityId" Type="int" />
+    <Property Name="RelatedBlockId" Type="int" />
+    <Property Name="VillageName" Type="varchar" MaxLength="100" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="PinCode" Type="int" />
+    <Property Name="BeneficiaryPicName" Type="varchar" MaxLength="200" />
+    <Property Name="AdharPicName" Type="varchar" MaxLength="200" />
+    <Property Name="RegDT" Type="datetime" />
+    <Property Name="IsDel" Type="bit" />
+  </EntityType>
+  <EntityType Name="Block_Master">
+    <Key>
+      <PropertyRef Name="BlockId" />
+    </Key>
+    <Property Name="BlockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlockName" Type="varchar" MaxLength="100" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City_Master">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="100" />
+    <Property Name="StateId" Type="int" />
+  </EntityType>
+  <EntityType Name="Enquiry_Master">
+    <Key>
+      <PropertyRef Name="EnquiryId" />
+    </Key>
+    <Property Name="EnquiryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="70" />
+    <Property Name="EmailId" Type="varchar" MaxLength="200" />
+    <Property Name="MobNo" Type="bigint" />
+    <Property Name="Topic" Type="varchar" MaxLength="100" />
+    <Property Name="Enquiry_Msg" Type="varchar(max)" />
+    <Property Name="Enquiry_dt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Feedback_Master">
+    <Key>
+      <PropertyRef Name="FeedbackId" />
+    </Key>
+    <Property Name="FeedbackId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FeedbackTitle" Type="varchar" MaxLength="100" />
+    <Property Name="Description" Type="varchar" MaxLength="100" />
+    <Property Name="UserId" Type="varchar" MaxLength="100" />
+    <Property Name="Feedback_DT" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Login_Master">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="UserType" Type="varchar" MaxLength="200" />
+    <Property Name="Pass" Type="varchar" MaxLength="250" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="LCount" Type="int" />
+    <Property Name="LastLogin_dt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Notification_Master">
+    <Key>
+      <PropertyRef Name="Nid" />
+    </Key>
+    <Property Name="Nid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NMsg" Type="varchar(max)" />
+    <Property Name="NDT" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Service_Master">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Services" Type="varchar" MaxLength="100" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" MaxLength="300" />
+    <Property Name="Service_DT" Type="varchar" MaxLength="30" />
+    <Property Name="IsDel" Type="bit" />
+  </EntityType>
+  <EntityType Name="State_Master">
+    <Key>
+      <PropertyRef Name="StateId" />
+    </Key>
+    <Property Name="StateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_BeneficiaryMaster_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="0..1" />
+    <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="BeneficiaryMaster">
+        <PropertyRef Name="RelatedCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BeneficiaryMaster_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="BeneficiaryMaster" Type="Self.BeneficiaryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="BeneficiaryMaster">
+        <PropertyRef Name="RelatedStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Block_Master_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+    <End Role="Block_Master" Type="Self.Block_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="Block_Master">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Master_City_Master">
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="1" />
+    <End Role="City_Master1" Type="Self.City_Master" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="City_Master">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="City_Master1">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Master_State_Master">
+    <End Role="State_Master" Type="Self.State_Master" Multiplicity="0..1" />
+    <End Role="City_Master" Type="Self.City_Master" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State_Master">
+        <PropertyRef Name="StateId" />
+      </Principal>
+      <Dependent Role="City_Master">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Panchyat_DBModelStoreContainer">
+    <EntitySet Name="Apply_Master" EntityType="Self.Apply_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BeneficiaryMaster" EntityType="Self.BeneficiaryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Block_Master" EntityType="Self.Block_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City_Master" EntityType="Self.City_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enquiry_Master" EntityType="Self.Enquiry_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Feedback_Master" EntityType="Self.Feedback_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Master" EntityType="Self.Login_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification_Master" EntityType="Self.Notification_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service_Master" EntityType="Self.Service_Master" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State_Master" EntityType="Self.State_Master" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_BeneficiaryMaster_City_Master" Association="Self.FK_BeneficiaryMaster_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BeneficiaryMaster_State_Master" Association="Self.FK_BeneficiaryMaster_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="BeneficiaryMaster" EntitySet="BeneficiaryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Block_Master_City_Master" Association="Self.FK_Block_Master_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="Block_Master" EntitySet="Block_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Master_City_Master" Association="Self.FK_City_Master_City_Master">
+      <End Role="City_Master" EntitySet="City_Master" />
+      <End Role="City_Master1" EntitySet="City_Master" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Master_State_Master" Association="Self.FK_City_Master_State_Master">
+      <End Role="State_Master" EntitySet="State_Master" />
+      <End Role="City_Master" EntitySet="City_Master" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

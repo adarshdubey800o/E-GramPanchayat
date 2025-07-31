@@ -1,0 +1,205 @@
+﻿
+@{
+    ViewBag.Title = "Services3";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    #back {
+        background-image: url('/Content/Images/SCHOOLnew.jpg');
+        min-height: 400px;
+        width: 100%;
+        background-size: cover;
+    }
+
+    .card:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 5px 5px 10px 1px rgba( 0, 0, 0, 0.496);
+    }
+
+    .card {
+        transition-duration: 2.4s;
+        transform: translateY(-30px);
+        background-color: antiquewhite;
+    }
+
+    #content:hover {
+        background-color: darkorange;
+        transform: translateY(0px);
+        box-shadow: 3px 3px 5px 1px rgba( 0, 0, 0, 0.496);
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $(".san").fadeIn(3000);
+        $("#img").fadeIn(5000);
+    })
+</script>
+<div class="container-fluid p-0">
+
+    <div class="row" style="margin:0px;padding:0px">
+        <div class="col-sm-12" id="back">
+            <div class="row">
+                <div class="col-sm-12" style="background-color:rgba( 0, 0, 0, 0.496); min-height:400px;">
+                    <div class="row">
+                        <div class="col-sm-6 text-light p-5 san" style=" height:300px;display:none;">
+                            <h1> सर्व शिक्षा अभियान</h1>
+
+                        </div>
+                        <div class="col-sm-6 text-light  san " style=" height:300px; display:none;">
+                            <div class="row">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-2 mt-5">
+                                    @*<button class="form-control mt-5 btn-success btn-outline-light">Button</button>*@
+                                </div>
+                                <div class="col-sm-5"></div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 mt-3 bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row ">
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian;"> Introduction</h4>
+                            <p class="card-text" style="">
+
+                                सार्वभौमिक प्रारंभिक शिक्षा के लिए एक स्पष्ट समय-सीमा के साथ कार्यक्रम।
+                                पूरे देश के लिए गुणवत्तायुक्त आधारभूत शिक्षा की माँग का जवाब,
+                                आधारभूत शिक्षा के माध्यम से सामाजिक न्याय को बढ़ावा देने का अवसर,
+                                प्रारंभिक शिक्षा के प्रबंधन में - पंचायती राज संस्थाओं, स्कूल प्रबंधन समिति, ग्रामीण व शहरी गंदी बस्ती स्तरीय शिक्षा समिति, अभिभावक-शिक्षक संगठन, माता-शिक्षक संगठन, जनजातीय स्वायतशासी परिषद् और अन्य जमीन से जुड़े संस्थाओं को, प्रभावी रूप से शामिल करने का प्रयास,
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Mission</h4>
+                            <p class="card-text">
+                                सभी बच्चों के लिए वर्ष 2005 तक प्रारंभिक विद्यालय, शिक्षा गारंटी केन्द्र, वैकल्पिक विद्यालय, "बैक टू स्कूल" शिविर की उपलब्धता।
+                                सभी बच्चे 2007 तक 5 वर्ष की प्राथमिक शिक्षा पूरी कर लें।
+                                सभी बच्चे 2010 तक 8 वर्षों की स्कूली शिक्षा पूरी कर लें।
+                                संतोषजनक कोटि की प्रारंभिक शिक्षा, जिसमें जीवनोपयोगी शिक्षा को विशेष महत्त्व दिया गया हो, पर बल देना।
+                                स्त्री-पुरुष असमानता तथा सामाजिक वर्ग-भेद को 2007 तक प्राथमिक स्तर तथा 2010 तक प्रारंभिक स्तर पर समाप्त करना।
+
+
+
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian">Motto</h4>
+                            <p class="card-text">
+
+
+                                संस्थागत सुधार-सर्व शिक्षा अभियान के एक भाग के रूप में राज्यों में संस्थागत सुधार किए जाएंगे। राज्यों को अपनी मौजूदा शैक्षिक पद्धति का वस्तुपरक मूल्यांकन करना होगा जिसमें शैक्षिक प्रशासन, स्कूलों में उपलब्धि स्तर, वित्तीय मामले, विकेन्द्रीकरण तथा सामुदायिक स्वामित्व, राज्य शिक्षा अधिनियम की समीक्षा, शिक्षकों की नियुक्ति तथा शिक्षकों की तैनाती को तर्कसम्मत बनाना, मॉनीटरिंग तथा मूल्यांकन, लड़कियों, अनुसूचित जाति/अनुसूचित जनजाति तथा  शिक्षा, निजी स्कूलों   संबंधी मामले होगें।
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card w-100">
+                        <div class="card-body">
+
+                            <h4 class="card-subtitle mb-2 text-muted text-center" style="font-family:Algerian"> Beneficiciary</h4>
+                            <p class="card-text">
+
+                                ग्राम शिक्षा समिति का कार्यकाल सामान्यत: तीन वर्षों का है
+                                अगर ग्राम शिक्षा समिति के कार्यों  से अभिभावक असन्तुष्ट हो तो विद्यालय में नांमाकित कम से कम 50 प्रतिशत बच्चों के अभिभावक की शिकायत पर आम सभा / ग्राम सभा द्वारा समिति को बीच में ही भंग कर नई समिति का गठन किया जा सकता है। एक सफल आम सभा में 80 प्रतिशत अभिभावकों की उपस्थिति होनी चाहिये।
+                                तीसरे वर्ष के अंतिम तीन महीने में आम सभा द्वारा नई समिति का गठन नियमानुसार अनिवार्य रुप से करा लिया जाये।
+                            </p>
+                            @*<a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
+    <div class="row pt-4">
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="~/Content/Images/SCHOOL3.jpg" style="border-radius: 10px;" id="content" />
+                </div>
+                <div class="col-sm-6" style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;" id="content">
+                    <h3 class="text-center pt-1" style="font-family: Algerian; font-size: 20px;">सर्व शिक्षा अभियान</h3>
+                    <p class="p-1">
+
+                        सभी व्यक्ति को अपने जीवन की बेहतरी का अधिकार है। लेकिन दुनियाभर के बहुत सारे बच्चे इस अवसर के अभाव में ही जी रहे हैं क्योंकि उन्हें प्राथमिक शिक्षा जैसे अनिवार्य मूलभूत अधिकार भी मुहैया नहीं कराई जा रही है।
+
+                        भारत में बच्चों को साक्षर करने की दिशा में चलाये जा रहे कार्यक्रमों के परिणामस्वरूप वर्ष 2000 के अन्त तक भारत में 94 प्रतिशत ग्रामीण बच्चों को उनके आवास से 1 किमी की दूरी पर प्राथमिक विद्यालय एवं 3 किमी की दूरी पर उच्च प्राथमिक विद्यालय की सुविधाएँ उपलब्ध थीं। अनुसूचित जाति व जनजाति वर्गों के बच्चों तथा बालिकाओं का अधिक से अधिक संख्या में स्कूलों में नामांकन कराने के उद्देश्य से विशेष प्रयास किये गये। प्रथम पंचवर्षीय योजना से लेकर अब तक प्राथमिक व उच्च प्राथमिक विद्यालयों में नामांकन लेने वाले बच्चों की संख्या एवं स्कूलों की संख्या मे निरंतर वृद्धि हुई है। 1950-51 में जहाँ प्राथमिक शिक्षा प्राप्त करने के लिए 3.1 मिलियन बच्चों ने नामांकन लिया था वहीं 1997-98 में इसकी संख्या बढ़कर 39.5 मिलियन हो गई। उसी प्रकार 1950-51 में प्राथमिक व उच्च प्राथमिक विद्यालयों की संख्या 0.223 मिलियन थी जिसकी संख्या 1996-97 में बढ़कर 0.775 मिलियन हो गई। एक अनुमान के मुताबिक वर्ष 2002-03 में 6-14 आयु वर्ग के 82 प्रतिशत बच्चों ने विभिन्न विद्यालयों में नामांकन लिया था। भारत सरकार का लक्ष्य इस संख्या को इस दशक के अंत तक 100 प्रतिशत तक पहुँचाना है।
+
+
+
+
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row pt-3">
+        <div class="col-sm-12 pt-5">
+            <div class="card-group">
+                <div class="card">
+                    <img src="~/Content/Images/schl1.jpg" class="card-img-top img-fluid" alt="..." style="height:300px">
+
+                </div>
+                <div class="card">
+                    <img src="~/Content/Images/schl2.jpg" class="card-img-top img-fluid" alt="..." style="height:300px;">
+
+                </div>
+                <div class="card">
+                    <img src="~/Content/Images/SCHOOL.jpg" class="card-img-top img-fluid" alt="..." style="height:300px">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center pt-2" style="font-family: Algerian; font-size: 20px;"><b>लक्ष्य कथन</b></h1>
+
+
+            <p style="line-height: 2; word-spacing: 1px; background-color: antiquewhite;padding:10px">
+                सर्व शिक्षा अभियान, एक निश्चित समयावधि के भीतर प्रारंभिक शिक्षा के सार्वभौमीकरण लक्ष्य को प्राप्त करने के लिए भारत सरकार का एक महत्वपूर्ण कार्यक्रम है। 86 वें संविधान संशोधन द्वारा 6-14 आयु वर्ष वाले बच्चों के लिए, प्राथमिक शिक्षा को एक मौलिक अधिकार के रूप में, निःशुल्क और अनिवार्य रूप से उपलब्ध कराना अनिवार्य बना दिया गया है। सर्व शिक्षा अभियान पूरे देश में राज्य सरकार की सहभागिता से चलाया जा रहा है ताकि देश के 11 लाख गाँवों के 19.2 लाख बच्चों की जरूरतों को पूरा किया जा सके। इस कार्यक्रम के अंतर्गत वैसे गाँवों में, जहाँ अभी स्कूली सुविधा नहीं है, वहाँ नये स्कूल खोलना और विद्यमान स्कूलों में अतिरिक्त क्लास रूम (अध्ययन कक्ष), शौचालय, पीने का पानी, मरम्मत निधि, स्कूल सुधार निधि प्रदान कर उसे सशक्त बनाये जाने की भी योजना है। वर्तमान में कार्यरत वैसे स्कूल जहाँ शिक्षकों की संख्या अपर्याप्त है वहाँ अतिरिक्त शिक्षकों की व्यवस्था की जाएगी जबकि वर्तमान में कार्यरत शिक्षकों को गहन प्रशिक्षण प्रदान कर, शिक्षण-प्रवीणता सामग्री के विकास के लिए निधि प्रदान कर एवं टोला, प्रखंड, जिला स्तर पर अकादमिक सहायता संरचना को मजबूत किया जाएगा। सर्व शिक्षा अभियान जीवन-कौशल के साथ गुणवत्तायुक्त प्रारंभिक शिक्षा प्रदान करने की इच्छा रखता है। सर्व शिक्षा अभियान का बालिका शिक्षा और जरूरतमंद बच्चों पर खास जोर है। साथ ही, सर्व शिक्षा अभियान का देश में व्याप्त डिजिटल दूरी को समाप्त करने के लिए कंप्यूटर शिक्षा प्रदान करने की भी योजना है।
+
+
+            </p>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+

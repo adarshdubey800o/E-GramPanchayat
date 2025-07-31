@@ -1,0 +1,287 @@
+﻿
+@{
+    ViewBag.Title = "ImageGalary";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+<style>
+    .card {
+        padding: 20px;
+        width: 330px;
+        min-height: 370px;
+        border-radius: 20px;
+        background: #e8e8e8;
+        box-shadow: 5px 5px 6px #dadada, -5px -5px 6px #f6f6f6;
+        transition: 0.4s;
+    }
+
+        .card:hover {
+            translate: 0 -10px;
+        }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2e54a7;
+        margin: 15px 0 0 10px;
+    }
+
+    .card-image {
+        min-height: 170px;
+        background-color: #c9c9c9;
+        border-radius: 15px;
+        box-shadow: inset 8px 8px 10px #c3c3c3, inset -8px -8px 10px #cfcfcf;
+    }
+
+    .card-body {
+        margin: 13px 0 0 10px;
+        color: rgb(31, 31, 31);
+        font-size: 15px;
+    }
+
+    .footer {
+        float: right;
+        margin: 28px 0 0 18px;
+        font-size: 13px;
+        color: #636363;
+    }
+
+    .by-name {
+        font-weight: 700;
+    }
+
+    .Vidio-section {
+        box-shadow: 0 7px 30px -10px rgba(150,170,180,0.5);
+    }
+
+    .vidio-section2 {
+        box-shadow: 0px 1px 0px 0px rgba(27, 31, 36, 0.04);
+    }
+</style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row mt-3 Vidio-section">
+            <h3 class="text-center" style="font-size:3rem;"> Our Photos Galary</h3>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (9).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title"> Gramsabha</p>
+                    <p class="card-body">
+                        You must give appropriate credit, provide a link to the license, and
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (2).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Panchayat Raj System</p>
+                    <p class="card-body">
+                        Since ancient times, Panchayats have been the symbols of local self-governance and centers of village
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (3).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">National Panchayati Raj</p>
+                    <p class="card-body">
+                        National Panchayati Raj Day is observed in India on April 24 every year to mark the constitutional
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (4).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Panchayat meeting </p>
+                    <p class="card-body">
+                        to mark the constitutional amendment that
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--second row-->
+        <div class="row mt-4 Vidio-section">
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (5).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Village Panchayats</p>
+                    <p class="card-body">
+                        Rayagada, Oct 3: Tribal people of several villages of Therubali and Kartikaguda gram panchayats, which are situated
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village10.jpeg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Deen Dayal Upadhyaya G.M.K</p>
+                    <p class="card-body">
+                        To the utter dismay of the members present, no agenda was fixed and
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (7).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Vikas Yojna</p>
+                    <p class="card-body">
+                        To the utter dismay of the members present, no agenda was fixed and discussed with Gram Sabha.
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/village (8).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Village Long Mettinge</p>
+                    <p class="card-body">
+                        agada, Oct 3: Tribal people of several villages of Therubali and Kartikaguda.
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+        </div>
+        <!--end row-->
+        <!--Third row start-->
+        <div class="row mt-4 Vidio-section">
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/svg (2).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title"> Gram Sabha meeting</p>
+                    <p class="card-body">
+                        The Narendra Modi-led NDA government may be right in
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/svg (3).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Gram Panchayat</p>
+                    <p class="card-body">
+                        remote village in Bihar’s Bhojpur district, Sushumlata sits behind a spanking new desk in a
+
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/svg (4).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">E-Gram Panchayat</p>
+                    <p class="card-body">
+                        Nullam ac tristique nulla, at convallis quam. Integer consectetur mi nec magna tristique, non lobortis.
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+            <div class="col-sm-3 mt-2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="~/Content/Images/svg (10).jpg" height="100%" width="100%" />
+                    </div>
+                    <p class="card-title">Sukanya</p>
+                    <p class="card-body">
+                        Later, armed with a master’s degree in social work, she joined
+                    </p>
+                    @*<p class="footer">Written by <span class="by-name">John Doe</span> on <span class="date">25/05/23</span></p>*@
+                </div>
+            </div>
+        </div>
+        <!--Third row end-->
+        <!--Vidio Section Start-->
+        <div class="row mt-2 vidio-section2">
+            <h4 class="text-center" style="font-size:3rem;">Video Galary</h4>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/5bEGFEl_WTA?si=RcfLXfj7PN-DR5pB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/JHf0iPFVkJM?si=SsfnT-525dbq-qyV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/O7PAZFk_-wg?si=6pbOq_ypgEf-6Nwb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+
+        <div class="row mt-2 vidio-section2">
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/zYf4NBOxCko?si=W1WMdDky-9JP_5b9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/9oXEX0S088A?si=w4bzbK0FFdI2CoF6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/6oJ2ldxTk6w?si=A6LgaH0YL1JJdU0l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+
+        <div class="row mt-2 vidio-section2">
+
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/BKwDvXap63I?si=jlXk-b3TJu0Bw-Hz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/W3tN3ot6b24?si=VkLUZlN5MyyyPHgt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="col-sm-4">
+                        <iframe width="350" height="250" src="https://www.youtube.com/embed/PTe2uWIISmg?si=XqUx1J3fNBTzE3LM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+        <!--Vidio Section End-->
+    </div>
+</body>
+</html>
+

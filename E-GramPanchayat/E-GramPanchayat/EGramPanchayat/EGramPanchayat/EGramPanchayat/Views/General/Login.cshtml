@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/General_Layout.cshtml";
+}
+
+
+
+    <style>
+      
+
+        .err {
+            color: red;
+        }
+
+        #log {
+            margin-top: 50px;
+            background-color: lightseagreen;
+            background-size: cover;
+            border-radius: 15px;
+        }
+    </style>
+   
+        
+    <div class="row" style="background-image: url('../../Content/Images/gramP4.jpg'); height:600px;">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-6">
+                    @* <img src="~/Content/img/gr12.jpg" style="height:500px;width:500px;margin-top:50px;"/>*@
+                    <img src="~/Content/Images/Gig.png" style="height:500px;width:100%;margin-top:50px;" />
+
+                </div>
+                <div class="col-sm-6" style="background-image: url('../../Content/Images/gramP4.jpg');" id="log" />
+                <form action="/" method="post">
+
+                    <div class="mb-3 mt-5">
+                        <h2 style="  text-align: center; font-weight: bold; margin-bottom:40px;">Login Here</h2>
+
+                        <select id="menu" class="form-select">
+                            <option value="">User Type</option>
+                            <option>Admin</option>
+                            <option>Staff</option>
+                            <option>User</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="Passwaord" placeholder="Enter your password">
+                    </div>
+                    <br /><br />
+                    &emsp;&emsp;&emsp;&emsp;&emsp;   <input type="submit" class="btn" id="btn" style="background-color: seagreen; width: 150px;" />&emsp;&emsp;&emsp;&emsp;
+                    <!-- Button trigger modal -->
+                    &emsp;&emsp;&emsp;  <button type="button" class="btn " style="background-color: #e3aa86;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Forget Password
+                    </button>
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">RE-GENERATE YOUR PASSWORD</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                        <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter your email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="Pass" placeholder="Enter your password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control" id="CPassword" placeholder="Enter your password again">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" id="savechange" class="btn" style="background-color: #e3aa86;">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+          
+        
+    
+
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                var email, password, select, status = true;
+
+                select = $("#menu").val().trim();
+                email = $("#exampleInputEmail1").val().trim();
+                password = $("#Passwaord").val().trim();
+
+
+                $(".err").remove();
+
+                // validate user
+                if (select.length == 0) {
+                    status = false;
+                    $("#menu").after("<span class='err'>Please enter your user type.</span>")
+                }
+                //validate email;
+                if (email.length == 0) {
+                    status = false;
+                    $("#exampleInputEmail1").after("<span class='err'>Please enter your email.</span>")
+                }
+                // validate password;
+                if (password.length == 0) {
+                    status = false;
+                    $("#Passwaord").after("<span class='err'>Please enter your password.</span>")
+                }
+
+                return status;
+            });
+        });
+
+        $(document).ready(function () {
+            $("#savechange").click(function () {
+                var email, password, cpassword, status = true;
+
+
+                emails = $("#Email").val().trim();
+                pass = $("#Pass").val().trim();
+                cpassword = $("#CPassword").val().trim();
+
+                $(".err").remove();
+
+                //validate email;
+                if (emails.length == 0) {
+                    status = false;
+                    $("#Email").after("<span class='err'>Please enter your email.</span>")
+                }
+                // validate password;
+                if (pass.length == 0) {
+                    status = false;
+                    $("#Pass").after("<span class='err'>Please enter your password.</span>")
+                }
+                // validate confirm password..
+                if (cpassword.length == 0) {
+                    status = false;
+                    $("#CPassword").after("<span class='err'>Please enter your new password.</span>")
+                }
+
+                return status;
+            });
+        });
+    </script>
+
+
